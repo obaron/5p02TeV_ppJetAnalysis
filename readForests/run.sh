@@ -1,6 +1,6 @@
 #!/bin/bash
 
-subm_ppData_jetPlots=1
+subm_ppData_jetPlots=0
 subm_ppMC_jetPlots=0
 subm_ppMC_JERS=1
 
