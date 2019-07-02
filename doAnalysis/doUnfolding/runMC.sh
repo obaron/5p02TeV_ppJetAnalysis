@@ -2,7 +2,7 @@
 
 ### ----------------------------------------------------------------------------------
 ### ----------------------------------------------------------------------------------
-if [ $# -eq 9 ]
+if [ $# -eq 10 ]
 then
     
     dirTag=$1
@@ -14,10 +14,11 @@ then
     runSVD=$7
     SVDkReg=$8
     BayeskIter=$9
+	desc=${10}
     
 else
     echo "usage:"
-    echo "source runMC.sh [dirTag] [MM] [DD] [YY] [useSimpBins] [runBayes] [runSVD] [SVDkReg] [BayeskIter]"
+    echo "source runMC.sh [dirTag] [MM] [DD] [YY] [useSimpBins] [runBayes] [runSVD] [SVDkReg] [BayeskIter] [desc]"
     return
 fi
 
@@ -33,7 +34,7 @@ then
     echo ""
     
     #USE: "source run_bayesUnfoldMCSpectra.sh [R=3,4] [condorDir] [date_output] [etaBin] [etaBinOut] [useSimpleBinning]"
-    source run_bayesUnfoldMCSpectra.sh  "4" "${condorDate}_outputCondor" "${sampleDate}" "${dirTag}" "Bayes_${condorDate}_${dirTag}" "${simpbins}" "${BayeskIter}"
+    source run_bayesUnfoldMCSpectra.sh  "3" "${condorDate}_outputCondor" "${sampleDate}" "${dirTag}" "Bayes_${condorDate}_${dirTag}" "${simpbins}" "${BayeskIter}" "${desc}"
     
     echo ""
     echo "Bayes MC Unfolding Done."
@@ -49,7 +50,7 @@ then
     echo ""
 
     #USE: "source run_SVDUnfoldMCSpectra.sh [R=3,4] [condorDir] [date_output] [etaBin] [etaBinOut] [kReg] [useSimpleBinning]"    
-    source run_SVDUnfoldMCSpectra.sh "4" "${condorDate}_outputCondor" "${sampleDate}" "${dirTag}" "SVD_${condorDate}_${dirTag}" "${SVDkReg}" "${simpbins}"
+    source run_SVDUnfoldMCSpectra.sh "3" "${condorDate}_outputCondor" "${sampleDate}" "${dirTag}" "SVD_${condorDate}_${dirTag}" "${SVDkReg}" "${simpbins}"
     
     echo ""
     echo "SVD MC Unfolding Done."

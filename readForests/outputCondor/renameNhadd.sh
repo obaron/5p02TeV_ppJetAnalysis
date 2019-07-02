@@ -99,9 +99,6 @@ fi
 
 
 
-#theSCRATCHdir=${SCRATCH}/5p02TeV_ppJetAnalysis/readForests/${date_scratch}_outputCondor/
-#theSCRATCHdir=/cms/heavyion/ilaflott/T2_US_MIT_SCRATCH/5p02TeV_ppJetAnalysis/readForests/${date_scratch}_outputCondor/
-#theSCRATCHdir=/cms/heavyion/ilaflott/T2_US_MIT_SCRATCH/5p02TeV_ppJetAnalysis/readForests/${date_scratch}_outputCondor/ppData_CaloHLT
 theSCRATCHdir=/cms/heavyion/obaron/5p02TeV_ppJetAnalysis/outputCondor/${date_scratch}_outputCondor
 workingDir=$PWD
 

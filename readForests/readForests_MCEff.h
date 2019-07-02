@@ -1,7 +1,7 @@
 ////////// (initializa/declara)tions //////////
 // custom
 #include "readForests_common.h"
-#include "L2L3ResidualWFits.h"
+//#include "L2L3ResidualWFits.h"
 //#include "MCTruthResidual.h"
 
 
@@ -15,34 +15,34 @@ const int minArgs=1+7;//jtetalo/hi optional, default is 0to4.7
 //const std::string defMCInFilelist="filelists/5p02TeV_Py8_CUETP8M1_QCDjetAllPtBins_forests.txt";
 //const std::string defMCInFilelist="filelists/test_readForests_ppMC_Py8_CUETP8M1_Official_forests_acrossBins.txt";
 const std::string defMCInFilelist="filelists/test_readForests_ppMC_Py8_CUETP8M1_forests_local.txt";
-const std::string defMCOutputName="readForests_ppMC_defOut_JERS.root";
+const std::string defMCOutputName="readForests_ppMC_defOut_MCEff.root";
 
-int readForests_ppMC_JERS( std::string inFilelist=defMCInFilelist, int startfile=0, int endfile=9,
+int readForests_ppMC_MCEff( std::string inFilelist=defMCInFilelist, 
+			    int startfile=0, int endfile=4,
 			   int radius=4, std::string jetType="PF",
 			   bool debugMode=true, 
 			   std::string outfile=defMCOutputName,
 			   float jtEtaCutLo=0., float jtEtaCutHi=2.0      );
 
+////CUTS: DO NOT CHANGE FOR NOW (6/25/19), USE SUGGESTED ONES BELOW TO EXPLORE WHAT YOU NEED [mostly JERS/unf, rarely jetPlots]
 
-////UNFOLDING CUTS: DO NOT CHANGE
-const float jtPtCut_unf_lo     = 43.;//64.;// 49.;// 43.;// 37.;//28.;//
-const float jtPtCut_unf_hi     = 1410.; //1248.  ;
-const float genJetPtCut_unf_lo = jtPtCut_unf_lo ; //49, 43, 37
-const float genJetPtCut_unf_hi = jtPtCut_unf_hi ; //1248 1172, 1101, 1032. 967
+//use these cuts to explore the matching efficiency of the jets found in the readForests_ppMC_JERS scripts
+const float jtPtCut        = 28.;
+const float jtPtCut_Hi     = 1410.;
+const float genJetPtCut    = 28.;
+const float genJetPtCut_Hi = 1410.;
 
-////JER CUTS: DO NOT CHANGE
-//const float jtPtCut_unf_lo     = 21. ;
-//const float jtPtCut_unf_hi     = 1410. ;
-//const float genJetPtCut_unf_lo = 21. ;
-//const float genJetPtCut_unf_hi = 1410. ;
+////use these cuts to explore the matching efficiency of the jets found in the readForests_ppMC_unf scripts
+//const float jtPtCut        = 43.;
+//const float jtPtCut_Hi     = 1410.;
+//const float genJetPtCut    = 43.;
+//const float genJetPtCut_Hi = 1410.;
 
-const float jtPtCut        = jtPtCut_unf_lo     ;
-const float jtPtCut_Hi     = jtPtCut_unf_hi     ;
-const float genJetPtCut    = genJetPtCut_unf_lo ;
-const float genJetPtCut_Hi = genJetPtCut_unf_hi ;
-
-const int genptBin1Low = 56 , genptBin1High = 64 ;	 
-const int genptBin2Low = 64 , genptBin2High  = 74 ;
+////use these cuts to explore the matching efficiency of the jets found in the readForests_ppMC_jetPlots scripts
+//const float jtPtCut        = 56.;
+//const float jtPtCut_Hi     = 1410.;
+//const float genJetPtCut    = 43.;
+//const float genJetPtCut_Hi = 1410.;
 
 
 // Apr 29th 2016

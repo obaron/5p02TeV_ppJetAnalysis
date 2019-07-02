@@ -3,7 +3,7 @@
 ##CONST
 jtID=1
 ##CONST
-if [ $# -eq 7 ]
+if [ $# -eq 8 ]
 then
     R=$1
     condorDir=$2
@@ -12,9 +12,10 @@ then
     etaBinOut=$5
     useSimpleBinning=$6
     BayeskIter=$7
+	desc=$8
 else
     echo "usage:"
-    echo "source run_bayesUnfoldMCSpectra.sh [R=3,4] [condorDir] [date_output] [etaBin] [etaBinOut] [useSimpleBinning] [BayeskIter]"
+    echo "source run_bayesUnfoldMCSpectra.sh [R=3,4] [condorDir] [date_output] [etaBin] [etaBinOut] [useSimpleBinning] [BayeskIter] [desc]"
     return
 fi
 
@@ -25,8 +26,12 @@ fi
 echo ""
 echo "running unfoldMCSpectra"
 echo ""
+echo "etabin is ${etaBin}"
+echo ""
+echo "desc is ${desc}"
+echo ""
 
-./bayesUnfoldMCSpectra.exe ${condorDir}/ppMC_Py8_CUETP8M1_QCDjetAllPtBins_ak${R}PFJets_${date_output}_JERS_${etaBin}  Py8_closureTest_${etaBinOut} ${jtID} ${useSimpleBinning} ${BayeskIter}
+./bayesUnfoldMCSpectra.exe ${condorDir}/ppMC_Py8_CUETP8M1_QCDjetAllPtBins_ak${R}PFJets_${date_output}_${desc}_${etaBin}  Py8_closureTest_${etaBinOut} ${jtID} ${useSimpleBinning} ${BayeskIter}
 #./bayesUnfoldMCSpectra_v2.exe ${condorDir}/ppMC_Py8_CUETP8M1_QCDjetAllPtBins_ak${R}PFJets_${date_output}_JERS_${etaBin}  Py8_closureTest_${etaBinOut} ${jtID} ${useSimpleBinning} ${BayeskIter}
 
 return
