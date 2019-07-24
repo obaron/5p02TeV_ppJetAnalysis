@@ -6,7 +6,7 @@
 #    NLOfilestr="fnl5020_LO2_R04Jets_modify_MMHT2014nlo68cl_HS"
 NLOfilestr="fnl5020_LO2_R04Jets_modify_NNPDF30_nnlo_as_0121_MC"
 NLOfileshortstr="NNPDF_NNLO"
-JERfilestr="/home/ilaflott/5p02TeV_ppJetAnalysis/CMSSW_7_5_8/src/doAnalysis/printPlots_JERS/output/ak4PF_MCJEC_"    #"00eta05.root"
+JERfilestr="/home/obaron/5p02TeV_ppJetAnalysis/CMSSW_7_5_8/src/doAnalysis/printPlots_JERS/output/ak3PF_PY8JER_"    #"00eta05.root"
 #JERfilestr="/home/ilaflott/5p02TeV_ppJetAnalysis/CMSSW_7_5_8/src/doAnalysis/printPlots_JERS/output/ak4PF_MCJEC_00eta20.root"
 Descstr="spl3wgts_ptmax1000_extv2.2"
 Fittypestr="modLog"

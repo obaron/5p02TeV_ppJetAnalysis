@@ -6,7 +6,7 @@ const int CANVX=1200, CANVY=1000;
 const int xsecorder=1;//0--> LO, 1--> NLO, 2--> NNLO... etc.
 
 const bool printBaseDebug=true;
-const bool useHistSigmaFit=false;
+const bool useHistSigmaFit=true;
 const bool useJERscaleFactors=false;//note; alters JER syst. as well.
 const bool setThyPDFErrors=true;
 
@@ -99,7 +99,7 @@ int smearTheorySpectra_gaussCoreJER_etabin( std::string in_NLOfileString=in_NLOF
   TFile *outf    = new TFile(outputFile.c_str(), "RECREATE" );
   
   // Input, Theory spectrum
-  std::string inputFile = "fNLOJetsSpectra/R03/"+in_NLOfileString+".root";
+  std::string inputFile = "fNLOJetsSpectra/R04/"+in_NLOfileString+".root";
   std::cout<<"opening input file:"<<inputFile<<std::endl<<std::endl;
   TFile* fin_NLO=TFile::Open(inputFile.c_str());
 
@@ -325,7 +325,7 @@ int smearTheorySpectra_gaussCoreJER_etabin( std::string in_NLOfileString=in_NLOF
     std::cout<<"NOW making theory PDF sys1/2 hists."<<std::endl;
     
     std::cout<<"opening PDFsys1 file"<<std::endl;
-    fin_PDFsys1=TFile::Open( ("fNLOJetsSpectra/R03/"+in_NLOFile_PDFsys1+".root").c_str());
+    fin_PDFsys1=TFile::Open( ("fNLOJetsSpectra/R04/"+in_NLOFile_PDFsys1+".root").c_str());
     if(!fin_PDFsys1)assert(false);
     PDFsys1_text+=" "+orderstring;
     
@@ -346,7 +346,7 @@ int smearTheorySpectra_gaussCoreJER_etabin( std::string in_NLOfileString=in_NLOF
     
     
     std::cout<<"opening PDFsys2 file"<<std::endl;
-    fin_PDFsys2=TFile::Open( ("fNLOJetsSpectra/R03/"+in_NLOFile_PDFsys2+".root").c_str());
+    fin_PDFsys2=TFile::Open( ("fNLOJetsSpectra/R04/"+in_NLOFile_PDFsys2+".root").c_str());
     if(!fin_PDFsys2)assert(false);
     PDFsys2_text+=" "+orderstring;
     

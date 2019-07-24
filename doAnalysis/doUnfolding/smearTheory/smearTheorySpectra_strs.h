@@ -1,6 +1,6 @@
-const std::string SCRATCH_BASE ="/cms/heavyion/ilaflott/T2_US_MIT_SCRATCH/5p02TeV_ppJetAnalysis/readForests/";
+const std::string SCRATCH_BASE ="/cms/heavyion/obaron/5p02TeV_ppJetAnalysis/outputCondor/";
 
-const std::string _PY8_FILESTR="02.18.19_outputCondor/ppMC_Py8_CUETP8M1_QCDjetAllPtBins_ak4PFJets_02-18-19_JERS_0.0eta3.0_unf/Py8_CUETP8M1_QCDjetAllPtBins_ak4PF-allFiles.root";
+const std::string _PY8_FILESTR="06.25.19_outputCondor/ppMC_Py8_CUETP8M1_QCDjetAllPtBins_ak3PFJets_06-25-19_unf_0.0eta2.0_unfold/Py8_CUETP8M1_QCDjetAllPtBins_ak3PF-allFiles.root";
 const std::string _PY8_DESCTXT="GEN PY8 CUETP8M1";
 
 //PDF file strings + descriptive text

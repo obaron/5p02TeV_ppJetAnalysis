@@ -17,7 +17,38 @@
 //  //4037, 4252, 4477, 4713, 4961, 5220, 5492, 5777, 6076, 6389, 6717, 7000
 //  };
 
-// ------ GEN SPECTRA BINS, IN PROGRESS------
+
+
+
+
+//// ------ CHRIS MCGINNS BINNING ------ //
+//// ------ GEN SPECTRA BINS, IN PROGRESS------
+//const double anabins_pt_gen[] = {//analysis pt bins
+//  60.,70.,80.,90.,100.,110.,
+//  120.,130.,140.,150.,160.,170.,
+//  180.,190.,200.,210.,220.,230.,
+//  240.,250.,260.,270.,280.,290.,
+//  310.,330.,350.,370.,400.,430.,
+//  500.//,//1500.,
+//};
+//const int n_anabins_pt_gen = sizeof(anabins_pt_gen)/sizeof(double)-1;
+//
+//// ------ RECO SPECTRA BINS IN PROGRESS------
+//const double anabins_pt_reco[] = {//analysis pt bins
+//  60.,70.,80.,90.,100.,110.,
+//  120.,130.,140.,150.,160.,170.,
+//  180.,190.,200.,210.,220.,230.,
+//  240.,250.,260.,270.,280.,290.,
+//  310.,330.,350.,370.,400.,430.,
+//  500.//,//1500.,
+//};
+//const int n_anabins_pt_reco = sizeof(anabins_pt_reco)/sizeof(double)-1;
+
+
+
+
+
+//// ------ GEN SPECTRA BINS, IN PROGRESS------
 const double anabins_pt_gen[] = {//analysis pt bins
   //1., 5., 6., 8., 10., 12., 15., 
   //18., //21., //24., 
@@ -108,6 +139,41 @@ const double anabins_pt_reco[] = {//analysis pt bins
   //1497.//, 1588. //, 1684. //, 1784., 1890., 2000., 2116.//,2238.  
 };
 const int n_anabins_pt_reco = sizeof(anabins_pt_reco)/sizeof(double)-1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 //// These analysis binnings (based on SMP binning) are excellent for Bayesian Unfolding of the following samples + settings
