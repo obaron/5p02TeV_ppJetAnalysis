@@ -4,11 +4,11 @@ const std::string _PY8_FILESTR="06.25.19_outputCondor/ppMC_Py8_CUETP8M1_QCDjetAl
 const std::string _PY8_DESCTXT="GEN PY8 CUETP8M1";
 
 //PDF file strings + descriptive text
-const std::string _CT10FILESTR="fnl5020_LO2_R04Jets_modify_CT10nlo_HS";
-const std::string _CT14FILESTR="fnl5020_LO2_R04Jets_modify_CT14nlo_HS";
-const std::string _HERAFILESTR="fnl5020_LO2_R04Jets_modify_HERAPDF15NLO_ALPHAS_HS";
-const std::string _MMHTFILESTR="fnl5020_LO2_R04Jets_modify_MMHT2014nlo68cl_HS";
-const std::string NNPDFFILESTR="fnl5020_LO2_R04Jets_modify_NNPDF30_nnlo_as_0121_MC";
+const std::string _CT10FILESTR="fnl5020_LO2_R03Jets_modify_CT10nlo_HS";
+const std::string _CT14FILESTR="fnl5020_LO2_R03Jets_modify_CT14nlo_HS";
+const std::string _HERAFILESTR="fnl5020_LO2_R03Jets_modify_HERAPDF15NLO_ALPHAS_HS";
+const std::string _MMHTFILESTR="fnl5020_LO2_R03Jets_modify_MMHT2014nlo68cl_HS";
+const std::string NNPDFFILESTR="fnl5020_LO2_R03Jets_modify_NNPDF30_nnlo_as_0121_MC";
 
 
 const std::string _CT10DESCTXT="CT10";
@@ -19,17 +19,17 @@ const std::string NNPDFDESCTXT="NNPDF30";
 
 
 //NP corr fits strings + descriptive text
-const std::string HERWGEE4_NPS = "NPC_HerwigEE4C_R4";  //LO
-const std::string HERWGEE5_NPS = "NPC_HerwigEE5C_R4";  //LO
-const std::string _PYTHIA8_NPS = "NPC_PYTHIA8_R4";      //LO
-const std::string _POW_PY8_NPS = "NPC_POWPY8_R4";  //NLO
-const std::string POWPY8CT_NPS = "NPC_POWPY8CTEQ_R4";  //NLO
+const std::string HERWGEE4_NPS = "NPC_HerwigEE4C_R3";  //LO
+const std::string HERWGEE5_NPS = "NPC_HerwigEE5C_R3";  //LO
+const std::string _PYTHIA8_NPS = "NPC_PYTHIA8_R3";      //LO
+const std::string _POW_PY8_NPS = "NPC_POWPY8_R3";  //NLO
+const std::string POWPY8CT_NPS = "NPC_POWPY8CTEQ_R3";  //NLO
 
-const std::string HERWGEE4_NPS_TXT = "Herwig EE4C R4";  //LO
-const std::string HERWGEE5_NPS_TXT = "Herwig EE5C R4";  //LO
-const std::string _PYTHIA8_NPS_TXT = "PYTHIA8 R4";      //LO
-const std::string _POW_PY8_NPS_TXT = "POW+PY8 R4";  //NLO
-const std::string POWPY8CT_NPS_TXT = "POW+PY8 CTEQ R4";  //NLO
+const std::string HERWGEE4_NPS_TXT = "Herwig EE4C R3";  //LO
+const std::string HERWGEE5_NPS_TXT = "Herwig EE5C R3";  //LO
+const std::string _PYTHIA8_NPS_TXT = "PYTHIA8 R3";      //LO
+const std::string _POW_PY8_NPS_TXT = "POW+PY8 R3";  //NLO
+const std::string POWPY8CT_NPS_TXT = "POW+PY8 CTEQ R3";  //NLO
 
 
 //descriptive text

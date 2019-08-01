@@ -49,8 +49,8 @@ then
     
     scpoutput=0
     scpafterlast=0
-    etabin_i=0
-    Netabins=4 ##debug; runs first etabin only
+    etabin_i=2
+    Netabins=3 ##debug; runs first etabin only
     #Netabins=4 
     while [ $etabin_i -lt $Netabins ]
     do
