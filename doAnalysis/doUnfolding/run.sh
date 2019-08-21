@@ -27,7 +27,7 @@ doNLOMCUnfolding=0
 NLOMCBayeskIter=6
 NLOMCSVDkReg=6
 #Data
-doDataUnfoldingwNLO=0
+doDataUnfoldingwNLO=1
 dataNLOBayeskIter=6
 dataNLOSVDkReg=6
 

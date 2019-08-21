@@ -15,7 +15,7 @@ const bool setThyPDFErrors=true;
 //const int nEvents=1e+08;  ///typical
 //const int nEvents=5e+07;  /// debug nevents
 //const int nEvents=1e+07;  /// debug nevents
-const int nEvents=1e+06;  /// debug nevents
+const int nEvents=1e+08;  /// debug nevents
 //const int nEvents=1e+05;  /// debug nevents
 
 //// LO NPCs
@@ -33,10 +33,10 @@ const std::string NPCorrFits_text=HERWGEE5_NPS_TXT;
 
 //SYSTEMATICS
 //JER
-const bool doJERsys=false;
+const bool doJERsys=true;
 
 //NPCs
-const bool doNPsys=false;//involves making a new thy hist, therefore, also a sep spline fit
+const bool doNPsys=true;//involves making a new thy hist, therefore, also a sep spline fit
 //NP systs v1, using HERWIG EE4C/PYTHIA8 NPs for unfolding, shifting NP fit params up/down by 1 sigma
 const float NPerrfact=1.0;//# sigma to shift NP fit params by. 
 const std::string NPsys1_CorrFits_str =HERWGEE4_NPS;
@@ -52,7 +52,7 @@ const std::string NPsys2_CorrFits_text=_PYTHIA8_NPS_TXT;
 //const std::string NPsys2_CorrFits_text=POWPY8CT_NPS_TXT;
 
 //PDFs
-const bool doPDFsys=false; //involves making a new thy hist, therefore, also a sep spline fit
+const bool doPDFsys=true; //involves making a new thy hist, therefore, also a sep spline fit
 //PDF systs v1; using CT14/HERA pdfs for unfolding, using the 6 pt scale uncertainty + PDF unc w/ err fact == 1
 const float PDFerrfact=1.0;
 const std::string in_NLOFile_PDFsys1=_CT14FILESTR;
