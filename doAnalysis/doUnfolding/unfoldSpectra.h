@@ -336,7 +336,7 @@ double* setBinning_etabin(int etabinint=0, std::string type="SMP", int* nbins=NU
   
   if(funcDebug)std::cout<<std::endl<<"setBinning_etabin done, exiting."<<std::endl<<std::endl;
   return binarray;  
-
+assert(false);
 }
 
 void setBinning_etabin_forPY8(

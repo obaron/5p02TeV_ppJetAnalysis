@@ -8,9 +8,9 @@ rooUnfoldCompile bayesUnfoldMCSpectra_wNLO_etabin.C
 ############ NNPDF NLO + HERWIG EE5C LO NPCs ###############
 
 FITTYPE="sigmu"
-THYDIR="smearTheory/NNPDF_03.14.19_${FITTYPE}_noJERscales_spl3wgts_gaussSmear_NLO_plots/"
-THYFILESTR="NNPDF_03.14.19_${FITTYPE}_noJERscales_spl3wgts_gaussSmear_"
-OUTPUTTAG="06.07.19_Bayes_Closure_NNPDF_NLO_${FITTYPE}_noJERscales"
+THYDIR="smearTheory/NNPDF_07.12.19_${FITTYPE}_noJERscales_spl3wgts_gaussSmear_NLO_plots/"
+THYFILESTR="NNPDF_07.12.19_${FITTYPE}_noJERscales_spl3wgts_gaussSmear_"
+OUTPUTTAG="07.12.19_Bayes_Closure_NNPDF_NLO_${FITTYPE}_noJERscales"
 
 
 ##vanilla no sys
@@ -18,7 +18,7 @@ OUTPUTTAG="06.07.19_Bayes_Closure_NNPDF_NLO_${FITTYPE}_noJERscales"
 #./bayesUnfoldMCSpectra_wNLO_etabin.exe  "${OUTPUTTAG}"  1    ${THYDIR} ${THYFILESTR} 
 #./bayesUnfoldMCSpectra_wNLO_etabin.exe  "${OUTPUTTAG}"  2    ${THYDIR} ${THYFILESTR} 
 #./bayesUnfoldMCSpectra_wNLO_etabin.exe  "${OUTPUTTAG}"  3    ${THYDIR} ${THYFILESTR} 
-scp2Serin "output/unfoldMCSpectra/ak4PFJets_wjtID_anabins_${OUTPUTTAG}_NLOMC_wNP_??eta??.*"
+#scp2Serin "output/unfoldMCSpectra/ak4PFJets_wjtID_anabins_${OUTPUTTAG}_NLOMC_wNP_??eta??.*"
 return
 
 

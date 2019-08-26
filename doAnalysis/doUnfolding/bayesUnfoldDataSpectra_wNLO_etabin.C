@@ -108,7 +108,7 @@ int bayesUnfoldDataSpectra_wNLO_etabin(	std::string inFile_Data_dir= "01.06.19_o
   
   // INFILE NAME(S) -----------
   //const std::string inFile_MC_name="/Py8_CUETP8M1_QCDjetAllPtBins_"+fullJetType+"-allFiles.root";
-  const std::string inFile_Data_name="/HighPtJetTrig_ak3PF-allFiles.root";
+  const std::string inFile_Data_name="/HighPtJetTrig_noMB_ak3PF-allFiles.root";
   
   // OUTPUT FILE, NAME(S) -----------
   std::string outFileName=unfoldDataSpectra_outdir+fullJetType;
@@ -658,7 +658,6 @@ int bayesUnfoldDataSpectra_wNLO_etabin(	std::string inFile_Data_dir= "01.06.19_o
   std::cout<<"Data file name : "<< (inFile_Data_name)<<std::endl;   std::cout<<std::endl;//<<std::endl;  
   TFile *fpp_Data = TFile::Open( (inFile_Data_dir+inFile_Data_name).c_str());
   if(fpp_Data->IsZombie())assert(false);
-std::cout<<"zombie check passed"<<std::endl;
   //for output
   if(debugWrite)fout->cd();    
   
@@ -666,7 +665,6 @@ std::cout<<"zombie check passed"<<std::endl;
   if(hJetQA_jtptEntries){
     hJetQA_jtptEntries = (TH1D*)hJetQA_jtptEntries->Rebin(nbins_pt_reco, hJetQA_jtptEntries->GetTitle(), boundaries_pt_reco);  
   }
-  std::cout<<"jtpt entries gotten"<<std::endl;
   // ---------- reco, measured spectra to unfold
   //std::string histTitle="hJetSpectraRap";
   std::string histTitle="hJetQA";
@@ -678,7 +676,6 @@ std::cout<<"zombie check passed"<<std::endl;
   TH1D*  hrec = (TH1D*)fpp_Data->Get( histTitle.c_str() ); 
   if(debugWrite)hrec->Write();
   if(debugMode)hrec->Print("base");
-  assert(false);
   histTitle+="_divBylumietabin";
   double effIntgrtdLumi=computeEffLumi(fpp_Data);
   effIntgrtdLumi=1.e+03;//TEMPORARY?!
