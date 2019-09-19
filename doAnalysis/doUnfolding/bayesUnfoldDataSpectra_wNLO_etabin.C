@@ -680,6 +680,7 @@ int bayesUnfoldDataSpectra_wNLO_etabin(	std::string inFile_Data_dir= "01.06.19_o
   double effIntgrtdLumi=computeEffLumi(fpp_Data);
   //effIntgrtdLumi=1.e+03;//TEMPORARY?!
   hrec->Scale(1./effIntgrtdLumi); // lumi
+  etd::cout<<"Integrated Luminosity =" <<effIntgrtdLumi<<std::endl;
   if(debugWrite)hrec->Write( (histTitle).c_str() );
   if(debugMode)hrec->Print("base");
   
