@@ -21,11 +21,11 @@ then
     
     
 ### INPUTS FOR run_smearTheory_etabin
-    nlofstr="fnl5020_LO2_R03Jets_modify_CT10nlo_HS"
+    #nlofstr="fnl5020_LO2_R03Jets_modify_CT10nlo_HS"
     #nlofstr="fnl5020_LO2_R03Jets_modify_CT14nlo_HS"
     #nlofstr="fnl5020_LO2_R03Jets_modify_HERAPDF15NLO_ALPHAS_HS"
     #nlofstr="fnl5020_LO2_R03Jets_modify_MMHT2014nlo68cl_HS"
-    #nlofstr="fnl5020_LO2_R03Jets_modify_NNPDF30_nnlo_as_0121_MC"
+    nlofstr="fnl5020_LO2_R03Jets_modify_NNPDF30_nnlo_as_0121_MC"
     
     #nlofshortstr="CT10"
     #nlofshortstr="CT14"
@@ -50,8 +50,8 @@ then
     scpoutput=0
     scpafterlast=0
     etabin_i=0
-    Netabins=1 ##debug; runs first etabin only
-    #Netabins=4 
+    #Netabins=1 ##debug; runs first etabin only
+    Netabins=4 
     while [ $etabin_i -lt $Netabins ]
     do
 	if [[ $scpafterlast -eq 1 ]]

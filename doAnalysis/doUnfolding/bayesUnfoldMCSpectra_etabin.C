@@ -13,7 +13,7 @@ const bool useGENybin=false;
 //const bool doJECsys=false;
 const bool applyNPCorrs=true;//&&compareToNLOThy;
 const std::string ptbintype="NLO_SMP";
-const bool compareToNLOThy=true&&(ptbintype=="NLO_SMP");
+const bool compareToNLOThy=false&&(ptbintype=="NLO_SMP");
 
 //-----------------------------
 

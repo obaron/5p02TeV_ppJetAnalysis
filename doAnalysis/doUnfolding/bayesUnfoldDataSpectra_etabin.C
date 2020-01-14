@@ -9,7 +9,7 @@ const bool doBiasTest=false;
 const bool setDataCovMat=true;
 const bool doJetID=true     ;
 const bool useSimpBins=false;
-const bool compareToNLOThy=true;
+const bool compareToNLOThy=false;
 const bool doJECsys=true;
 const bool applyNPCorrs=true;//&&compareToNLOThy;
 
