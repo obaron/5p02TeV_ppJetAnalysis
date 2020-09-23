@@ -879,12 +879,12 @@ int bayesUnfoldDataSpectra_wNLO_etabin(	std::string inFile_Data_dir= "01.06.19_o
   std::string NLOMCtitle_str="";//this is for the Toy NLO used specifically. the TH1s below are pure theory, no toy procedure on top.
 
   std::string CT10NPs ="" ; 
-  TFile*fNLO_CT10nlo=TFile::Open(fNLOFile_R04_CT10nlo.c_str());
+  TFile*fNLO_CT10nlo=TFile::Open(fNLOFile_R03_CT10nlo.c_str());
   TH1D* CT10nlo  = (TH1D*) fNLO_CT10nlo->Get(("h0100"+std::to_string(etabinint+1)+"00").c_str());
   TH1D* CT10nloerr=(TH1D*) fNLO_CT10nlo->Get(("h0100"+std::to_string(etabinint+1)+"02").c_str());//set proper, typical pdf errs on the thy hist
   for(int i=1; i<=CT10nlo->GetNbinsX(); i++)CT10nlo->SetBinError(i, CT10nlo->GetBinContent(i)*(CT10nloerr->GetBinContent(i))); 
   CT10nlo = (TH1D*)CT10nlo->Rebin(nbins_pt_gen,"pp_CT10nlo_rebin",boundaries_pt_gen);  
-  if(applyNPCorrs)    applyNPCorr_etabin(fNLOFile_R04_CT10nlo,
+  if(applyNPCorrs)    applyNPCorr_etabin(fNLOFile_R03_CT10nlo,
 					 CT10nlo, &CT10NPs, etabinint);
   CT10nlo->SetMarkerSize(0);
   CT10nlo->SetLineColor(kBlack);  
@@ -912,12 +912,12 @@ int bayesUnfoldDataSpectra_wNLO_etabin(	std::string inFile_Data_dir= "01.06.19_o
   }
   
   std::string CT14NPs ="" ; 
-  TFile*fNLO_CT14nlo=TFile::Open(fNLOFile_R04_CT14nlo.c_str());
+  TFile*fNLO_CT14nlo=TFile::Open(fNLOFile_R03_CT14nlo.c_str());
   TH1D* CT14nlo  = (TH1D*) fNLO_CT14nlo->Get(("h0100"+std::to_string(etabinint+1)+"00").c_str());
   TH1D* CT14nloerr  = (TH1D*) fNLO_CT14nlo->Get(("h0100"+std::to_string(etabinint+1)+"02").c_str());
   for(int i=1; i<=CT14nlo->GetNbinsX(); i++)CT14nlo->SetBinError(i, CT14nlo->GetBinContent(i)*(CT14nloerr->GetBinContent(i))); 
   CT14nlo=(TH1D*)CT14nlo->Rebin(nbins_pt_gen,"pp_CT14Thy_rebin",boundaries_pt_gen);
-  if(applyNPCorrs)    applyNPCorr_etabin(fNLOFile_R04_CT14nlo,
+  if(applyNPCorrs)    applyNPCorr_etabin(fNLOFile_R03_CT14nlo,
 					 CT14nlo, &CT14NPs, etabinint);
   CT14nlo->SetMarkerSize(0);
   CT14nlo->SetLineColor(kGreen);  
@@ -945,12 +945,12 @@ int bayesUnfoldDataSpectra_wNLO_etabin(	std::string inFile_Data_dir= "01.06.19_o
   }
   
   std::string HERANPs ="" ; 
-  TFile*fNLO_HERAPDF=TFile::Open(fNLOFile_R04_HERAPDF.c_str());
+  TFile*fNLO_HERAPDF=TFile::Open(fNLOFile_R03_HERAPDF.c_str());
   TH1D* HERAPDF  =(TH1D*) fNLO_HERAPDF->Get(("h0100"+std::to_string(etabinint+1)+"00").c_str());
   TH1D* HERAPDFerr  =(TH1D*) fNLO_HERAPDF->Get(("h0100"+std::to_string(etabinint+1)+"02").c_str());
   for(int i=1; i<=HERAPDF->GetNbinsX(); i++)HERAPDF->SetBinError(i, HERAPDF->GetBinContent(i)*(HERAPDFerr->GetBinContent(i))); 
   HERAPDF=(TH1D*)HERAPDF->Rebin(nbins_pt_gen,"pp_HERAPDF_rebin",boundaries_pt_gen);
-  if(applyNPCorrs)    applyNPCorr_etabin(fNLOFile_R04_HERAPDF,
+  if(applyNPCorrs)    applyNPCorr_etabin(fNLOFile_R03_HERAPDF,
 					 HERAPDF, &HERANPs, etabinint);
   HERAPDF->SetMarkerSize(0);
   HERAPDF->SetLineColor(kViolet-5);  
@@ -978,12 +978,12 @@ int bayesUnfoldDataSpectra_wNLO_etabin(	std::string inFile_Data_dir= "01.06.19_o
   }
   
   std::string MMHTNPs ="" ; 
-  TFile*fNLO_MMHTnlo=TFile::Open(fNLOFile_R04_MMHTnlo.c_str());
+  TFile*fNLO_MMHTnlo=TFile::Open(fNLOFile_R03_MMHTnlo.c_str());
   TH1D* MMHTnlo  =(TH1D*) fNLO_MMHTnlo->Get(("h0100"+std::to_string(etabinint+1)+"00").c_str());
   TH1D* MMHTnloerr  =(TH1D*) fNLO_MMHTnlo->Get(("h0100"+std::to_string(etabinint+1)+"02").c_str());
   for(int i=1; i<=MMHTnlo->GetNbinsX(); i++)MMHTnlo->SetBinError(i, MMHTnlo->GetBinContent(i)*(MMHTnloerr->GetBinContent(i))); 
   MMHTnlo=(TH1D*)MMHTnlo->Rebin(nbins_pt_gen,"pp_MMHT_rebin",boundaries_pt_gen);
-  if(applyNPCorrs)    applyNPCorr_etabin(fNLOFile_R04_MMHTnlo,
+  if(applyNPCorrs)    applyNPCorr_etabin(fNLOFile_R03_MMHTnlo,
 					 MMHTnlo, &MMHTNPs, etabinint);
   MMHTnlo->SetMarkerSize(0);
   MMHTnlo->SetLineColor(kOrange+7);  
@@ -1011,12 +1011,12 @@ int bayesUnfoldDataSpectra_wNLO_etabin(	std::string inFile_Data_dir= "01.06.19_o
   }
   
   std::string NNPDFNPs="" ; 
-  TFile*fNLO_NNPDFnnlo=TFile::Open(fNLOFile_R04_NNPDFnnlo.c_str());
+  TFile*fNLO_NNPDFnnlo=TFile::Open(fNLOFile_R03_NNPDFnnlo.c_str());
   TH1D* NNPDFnnlo=(TH1D*) fNLO_NNPDFnnlo->Get(("h0100"+std::to_string(etabinint+1)+"00").c_str());
   TH1D* NNPDFnnloerr=(TH1D*) fNLO_NNPDFnnlo->Get(("h0100"+std::to_string(etabinint+1)+"02").c_str());
   for(int i=1; i<=NNPDFnnloerr->GetNbinsX(); i++)NNPDFnnlo->SetBinError(i, NNPDFnnlo->GetBinContent(i)*(NNPDFnnloerr->GetBinContent(i))); 
   NNPDFnnlo=(TH1D*)NNPDFnnlo->Rebin(nbins_pt_gen,"pp_NNPDFnlo_rebin",boundaries_pt_gen);
-  if(applyNPCorrs)    applyNPCorr_etabin(fNLOFile_R04_NNPDFnnlo,
+  if(applyNPCorrs)    applyNPCorr_etabin(fNLOFile_R03_NNPDFnnlo,
 					 NNPDFnnlo, &NNPDFNPs, etabinint);
 				  
   NNPDFnnlo->SetMarkerSize(0);
@@ -2011,11 +2011,11 @@ int bayesUnfoldDataSpectra_wNLO_etabin(	std::string inFile_Data_dir= "01.06.19_o
     TLegend* legendThy1 =new TLegend( 0.50,0.65,0.90,0.9 );    
     
     setupSpectraHist(CT10nlo  ,useSimpBins);
-    if(debugWrite){fout->cd(); CT10nlo->Write("CT10_NLO_R04_jtpt");}    
+    if(debugWrite){fout->cd(); CT10nlo->Write("CT10_NLO_R03_jtpt");}    
     setupSpectraHist(CT14nlo  ,useSimpBins);
-    if(debugWrite){fout->cd(); CT14nlo->Write("CT14_NLO_R04_jtpt");}
+    if(debugWrite){fout->cd(); CT14nlo->Write("CT14_NLO_R03_jtpt");}
     setupSpectraHist(NNPDFnnlo,useSimpBins);        
-    if(debugWrite){fout->cd(); NNPDFnnlo->Write("NNPDF_NLO_R04_jtpt"); }    
+    if(debugWrite){fout->cd(); NNPDFnnlo->Write("NNPDF_NLO_R03_jtpt"); }    
     if(debugWrite)fout->cd();//makeThyHist will make me cd to last thy file opened...
     
     canvForPrint->cd();
@@ -2049,9 +2049,9 @@ int bayesUnfoldDataSpectra_wNLO_etabin(	std::string inFile_Data_dir= "01.06.19_o
     // thy spectra HERA/MMHT/NNPDF ---------------------------
 
     setupSpectraHist(HERAPDF  ,useSimpBins);
-    if(debugWrite){fout->cd(); HERAPDF->Write("HERAPDF105_NLO_R04_jtpt");}    
+    if(debugWrite){fout->cd(); HERAPDF->Write("HERAPDF105_NLO_R03_jtpt");}    
     setupSpectraHist(MMHTnlo  ,useSimpBins);
-    if(debugWrite){fout->cd(); MMHTnlo->Write("MMHT2014_NLO_R04_jtpt"); }
+    if(debugWrite){fout->cd(); MMHTnlo->Write("MMHT2014_NLO_R03_jtpt"); }
     if(debugWrite)fout->cd();//makeThyHist will make me cd to last thy file opened...
     
     canvForPrint->cd();
@@ -2628,17 +2628,17 @@ int bayesUnfoldDataSpectra_wNLO_etabin(	std::string inFile_Data_dir= "01.06.19_o
     hmat_percenterrs->SetTitle("PY8 Response Matrix Percent Errors");hmat_percenterrs->Write("MC_mat_rebin_percerrors");  }
   
   // input thy ---------------- 
-  CT10nlo  ->SetTitle("CT10 NLO Spectra");         CT10nlo  ->Write("NLO_CT10_NLO_R04_jtpt");	      
-  CT14nlo  ->SetTitle("CT14 NLO Spectra");	   CT14nlo  ->Write("NLO_CT14_NLO_R04_jtpt");	      
-  HERAPDF  ->SetTitle("HERAPDF NLO Spectra");	   HERAPDF  ->Write("NLO_HERAPDF105_NLO_R04_jtpt");  
-  MMHTnlo  ->SetTitle("MMHT NLO Spectra");	   MMHTnlo  ->Write("NLO_MMHT2014_NLO_R04_jtpt");    
-  NNPDFnnlo->SetTitle("NNPDF NNLO Spectra");	   NNPDFnnlo->Write("NLO_NNPDF_NLO_R04_jtpt");       
+  CT10nlo  ->SetTitle("CT10 NLO Spectra");         CT10nlo  ->Write("NLO_CT10_NLO_R03_jtpt");	      
+  CT14nlo  ->SetTitle("CT14 NLO Spectra");	   CT14nlo  ->Write("NLO_CT14_NLO_R03_jtpt");	      
+  HERAPDF  ->SetTitle("HERAPDF NLO Spectra");	   HERAPDF  ->Write("NLO_HERAPDF105_NLO_R03_jtpt");  
+  MMHTnlo  ->SetTitle("MMHT NLO Spectra");	   MMHTnlo  ->Write("NLO_MMHT2014_NLO_R03_jtpt");    
+  NNPDFnnlo->SetTitle("NNPDF NNLO Spectra");	   NNPDFnnlo->Write("NLO_NNPDF_NLO_R03_jtpt");       
   
-  CT10nloerr  ->SetTitle("CT10 NLO Spectra Err");      CT10nloerr  ->Write("NLO_CT10_NLO_R04_jtpt_err");	      
-  CT14nloerr  ->SetTitle("CT14 NLO Spectra Err");      CT14nloerr  ->Write("NLO_CT14_NLO_R04_jtpt_err");	      
-  HERAPDFerr  ->SetTitle("HERAPDF NLO Spectra Err");   HERAPDFerr  ->Write("NLO_HERAPDF105_NLO_R04_jtpt_err");  
-  MMHTnloerr  ->SetTitle("MMHT NLO Spectra Err");      MMHTnloerr  ->Write("NLO_MMHT2014_NLO_R04_jtpt_err");    
-  NNPDFnnloerr->SetTitle("NNPDF NNLO Spectra Err");    NNPDFnnloerr->Write("NLO_NNPDF_NLO_R04_jtpt_err");       
+  CT10nloerr  ->SetTitle("CT10 NLO Spectra Err");      CT10nloerr  ->Write("NLO_CT10_NLO_R03_jtpt_err");	      
+  CT14nloerr  ->SetTitle("CT14 NLO Spectra Err");      CT14nloerr  ->Write("NLO_CT14_NLO_R03_jtpt_err");	      
+  HERAPDFerr  ->SetTitle("HERAPDF NLO Spectra Err");   HERAPDFerr  ->Write("NLO_HERAPDF105_NLO_R03_jtpt_err");  
+  MMHTnloerr  ->SetTitle("MMHT NLO Spectra Err");      MMHTnloerr  ->Write("NLO_MMHT2014_NLO_R03_jtpt_err");    
+  NNPDFnnloerr->SetTitle("NNPDF NNLO Spectra Err");    NNPDFnnloerr->Write("NLO_NNPDF_NLO_R03_jtpt_err");       
   
   CT10nlo_np_scale6_up  ->SetTitle("CT10 NLO Spectra 6 Pt Scale Up Err");      CT10nlo_np_scale6_up  ->Write();   
   CT14nlo_np_scale6_up  ->SetTitle("CT14 NLO Spectra 6 Pt Scale Up Err");      CT14nlo_np_scale6_up  ->Write();   

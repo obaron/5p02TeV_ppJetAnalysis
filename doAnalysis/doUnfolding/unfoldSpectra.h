@@ -708,15 +708,15 @@ TH1* makeThyHist_00eta20(std::string filename, bool applyNPCorrFactor=true){
   if(applyNPCorrFactor){
     NPCorrFile=(TFile*)TFile::Open(NPCorr_filename.c_str());
     if(NPCorr_filename.find("nnlo")!=std::string::npos){
-      fNPCorr_00eta05=(TF1*)NPCorrFile->Get("fNPC_POWPY8_R4_etabin0");
-      fNPCorr_05eta10=(TF1*)NPCorrFile->Get("fNPC_POWPY8_R4_etabin1");
-      fNPCorr_10eta15=(TF1*)NPCorrFile->Get("fNPC_POWPY8_R4_etabin2");
-      fNPCorr_15eta20=(TF1*)NPCorrFile->Get("fNPC_POWPY8_R4_etabin3");    }
+      fNPCorr_00eta05=(TF1*)NPCorrFile->Get("fNPC_POWPY8_R3_etabin0");
+      fNPCorr_05eta10=(TF1*)NPCorrFile->Get("fNPC_POWPY8_R3_etabin1");
+      fNPCorr_10eta15=(TF1*)NPCorrFile->Get("fNPC_POWPY8_R3_etabin2");
+      fNPCorr_15eta20=(TF1*)NPCorrFile->Get("fNPC_POWPY8_R3_etabin3");    }
     else{
-      fNPCorr_00eta05=(TF1*)NPCorrFile->Get("fNPC_HerwigEE4C_R4_etabin0");
-      fNPCorr_05eta10=(TF1*)NPCorrFile->Get("fNPC_HerwigEE4C_R4_etabin1");
-      fNPCorr_10eta15=(TF1*)NPCorrFile->Get("fNPC_HerwigEE4C_R4_etabin2");
-      fNPCorr_15eta20=(TF1*)NPCorrFile->Get("fNPC_HerwigEE4C_R4_etabin3");    }
+      fNPCorr_00eta05=(TF1*)NPCorrFile->Get("fNPC_HerwigEE4C_R3_etabin0");
+      fNPCorr_05eta10=(TF1*)NPCorrFile->Get("fNPC_HerwigEE4C_R3_etabin1");
+      fNPCorr_10eta15=(TF1*)NPCorrFile->Get("fNPC_HerwigEE4C_R3_etabin2");
+      fNPCorr_15eta20=(TF1*)NPCorrFile->Get("fNPC_HerwigEE4C_R3_etabin3");    }
   }
   
   
@@ -819,18 +819,18 @@ TH1* makeThyHist_00eta20_v2(std::string filename, bool applyNPCorrFactor=true, s
     NPCorrFile=(TFile*)TFile::Open(NPCorr_filename.c_str());
     //    if(NPCorr_filename.find("nnlo")!=std::string::npos){
     if(filename.find("nnlo")!=std::string::npos){
-      fNPCorr_00eta05=(TF1*)NPCorrFile->Get("fNPC_POWPY8_R4_etabin0");
-      fNPCorr_05eta10=(TF1*)NPCorrFile->Get("fNPC_POWPY8_R4_etabin1");
-      fNPCorr_10eta15=(TF1*)NPCorrFile->Get("fNPC_POWPY8_R4_etabin2");
-      fNPCorr_15eta20=(TF1*)NPCorrFile->Get("fNPC_POWPY8_R4_etabin3");    
+      fNPCorr_00eta05=(TF1*)NPCorrFile->Get("fNPC_POWPY8_R3_etabin0");
+      fNPCorr_05eta10=(TF1*)NPCorrFile->Get("fNPC_POWPY8_R3_etabin1");
+      fNPCorr_10eta15=(TF1*)NPCorrFile->Get("fNPC_POWPY8_R3_etabin2");
+      fNPCorr_15eta20=(TF1*)NPCorrFile->Get("fNPC_POWPY8_R3_etabin3");    
       //if(NPCorrString)(*NPCorrString)=" #otimes POW+PY8 NPs";
       if(NPCorrString)(*NPCorrString)=" #otimes POW+PY8";
     }
     else{
-      fNPCorr_00eta05=(TF1*)NPCorrFile->Get("fNPC_HerwigEE4C_R4_etabin0");
-      fNPCorr_05eta10=(TF1*)NPCorrFile->Get("fNPC_HerwigEE4C_R4_etabin1");
-      fNPCorr_10eta15=(TF1*)NPCorrFile->Get("fNPC_HerwigEE4C_R4_etabin2");
-      fNPCorr_15eta20=(TF1*)NPCorrFile->Get("fNPC_HerwigEE4C_R4_etabin3");    
+      fNPCorr_00eta05=(TF1*)NPCorrFile->Get("fNPC_HerwigEE4C_R3_etabin0");
+      fNPCorr_05eta10=(TF1*)NPCorrFile->Get("fNPC_HerwigEE4C_R3_etabin1");
+      fNPCorr_10eta15=(TF1*)NPCorrFile->Get("fNPC_HerwigEE4C_R3_etabin2");
+      fNPCorr_15eta20=(TF1*)NPCorrFile->Get("fNPC_HerwigEE4C_R3_etabin3");    
       //      if(NPCorrString)(*NPCorrString)=" #otimes HERWIG EE4C NPs";
       if(NPCorrString)(*NPCorrString)=" #otimes HERWIG EE4C";
     }
@@ -926,11 +926,11 @@ void applyNPCorr_etabin(std::string nlofile_str="", TH1D* hnlo=NULL, std::string
   if(nlofile_str.find("nnlo")!=std::string::npos){    //if nnpdf nnlo, then use these nps
     //    NPCorrName="fNPC_POWPY8_R4_etabin";
     //if(NPsstr)(*NPsstr)=" #otimes POW+PY8";  
-    NPCorrName="fNPC_HerwigEE5C_R4_etabin";
+    NPCorrName="fNPC_HerwigEE5C_R3_etabin";
     if(NPsstr)(*NPsstr)=" #otimes HERWIG EE5C";  
   }
   else{    
-    NPCorrName="fNPC_HerwigEE4C_R4_etabin";
+    NPCorrName="fNPC_HerwigEE4C_R3_etabin";
     if(NPsstr)(*NPsstr)=" #otimes HERWIG EE4C";  }  
   NPCorrName+=std::to_string(etabinint);
   
@@ -1608,13 +1608,13 @@ void makeCombinedPlots(std::string outRootFile="", TCanvas* canvForPrint=NULL, s
   TCanvas* canv_thy_spectra_1=NULL;      TCanvas* canv_thy_spectra_2=NULL;    
   if(compareToNLOThy){
     // thy spectra, ratios #1 etc. ----------------------------------------------  
-    TH1D* CT10nlo	 = (TH1D*)fout->Get("NLO_CT10_NLO_R04_jtpt")	 ;
+    TH1D* CT10nlo	 = (TH1D*)fout->Get("NLO_CT10_NLO_R03_jtpt")	 ;
     CT10nlo->SetMarkerSize(0);
     CT10nlo->SetLineColor(kBlack);  
-    TH1D* CT14nlo	 = (TH1D*)fout->Get("NLO_CT14_NLO_R04_jtpt")	 ;
+    TH1D* CT14nlo	 = (TH1D*)fout->Get("NLO_CT14_NLO_R03_jtpt")	 ;
     CT14nlo->SetMarkerSize(0);
     CT14nlo->SetLineColor(kGreen);
-    TH1D* NNPDFnnlo= (TH1D*)fout->Get("NLO_NNPDF_NLO_R04_jtpt")    ;
+    TH1D* NNPDFnnlo= (TH1D*)fout->Get("NLO_NNPDF_NLO_R03_jtpt")    ;
     NNPDFnnlo->SetMarkerSize(0);
     NNPDFnnlo->SetLineColor(kCyan-6);  
     
@@ -1644,11 +1644,11 @@ void makeCombinedPlots(std::string outRootFile="", TCanvas* canvForPrint=NULL, s
     canvForPrint->Clear();
     
     // thy spectra, ratios #2 etc. ----------------------------------------------  
-    TH1D* HERAPDF	 = (TH1D*)fout->Get("NLO_HERAPDF105_NLO_R04_jtpt")	 ;
+    TH1D* HERAPDF	 = (TH1D*)fout->Get("NLO_HERAPDF105_NLO_R03_jtpt")	 ;
     HERAPDF->SetMarkerSize(0);
     HERAPDF->SetLineColor(kViolet-5);  
     
-    TH1D* MMHTnlo	 = (TH1D*)fout->Get("NLO_MMHT2014_NLO_R04_jtpt")	 ;
+    TH1D* MMHTnlo	 = (TH1D*)fout->Get("NLO_MMHT2014_NLO_R03_jtpt")	 ;
     MMHTnlo->SetMarkerSize(0);
     MMHTnlo->SetLineColor(kOrange+7);    
     
@@ -1926,13 +1926,13 @@ void makeCombinedPlots_NLO_etabin(
   TCanvas* canv_thy_spectra_1=NULL;      TCanvas* canv_thy_spectra_2=NULL;    
 
   // thy spectra, ratios #1 etc. ----------------------------------------------  
-  TH1D* CT10nlo	 = (TH1D*)fout->Get("NLO_CT10_NLO_R04_jtpt")	 ;
+  TH1D* CT10nlo	 = (TH1D*)fout->Get("NLO_CT10_NLO_R03_jtpt")	 ;
   CT10nlo->SetMarkerSize(0);
   CT10nlo->SetLineColor(kBlack);  
-  TH1D* CT14nlo	 = (TH1D*)fout->Get("NLO_CT14_NLO_R04_jtpt")	 ;
+  TH1D* CT14nlo	 = (TH1D*)fout->Get("NLO_CT14_NLO_R03_jtpt")	 ;
   CT14nlo->SetMarkerSize(0);
   CT14nlo->SetLineColor(kGreen);
-  TH1D* NNPDFnnlo= (TH1D*)fout->Get("NLO_NNPDF_NLO_R04_jtpt")    ;
+  TH1D* NNPDFnnlo= (TH1D*)fout->Get("NLO_NNPDF_NLO_R03_jtpt")    ;
   NNPDFnnlo->SetMarkerSize(0);
   NNPDFnnlo->SetLineColor(kCyan-6);  
   
@@ -1962,11 +1962,11 @@ void makeCombinedPlots_NLO_etabin(
   canvForPrint->Clear();
   
   // thy spectra, ratios #2 etc. ----------------------------------------------  
-  TH1D* HERAPDF	 = (TH1D*)fout->Get("NLO_HERAPDF105_NLO_R04_jtpt")	 ;
+  TH1D* HERAPDF	 = (TH1D*)fout->Get("NLO_HERAPDF105_NLO_R03_jtpt")	 ;
   HERAPDF->SetMarkerSize(0);
   HERAPDF->SetLineColor(kViolet-5);  
   
-  TH1D* MMHTnlo	 = (TH1D*)fout->Get("NLO_MMHT2014_NLO_R04_jtpt")	 ;
+  TH1D* MMHTnlo	 = (TH1D*)fout->Get("NLO_MMHT2014_NLO_R03_jtpt")	 ;
   MMHTnlo->SetMarkerSize(0);
   MMHTnlo->SetLineColor(kOrange+7);    
   
@@ -2227,13 +2227,13 @@ void makeCombinedPlots_closure(std::string outRootFile="", TCanvas* canvForPrint
   
   
   // thy spectra, ratios etc. ----------------------------------------------  
-  TH1D* CT10nlo	 = (TH1D*)fout->Get("NLO_CT10_NLO_R04_jtpt")	 ;
+  TH1D* CT10nlo	 = (TH1D*)fout->Get("NLO_CT10_NLO_R03_jtpt")	 ;
   CT10nlo->SetMarkerSize(0);
   CT10nlo->SetLineColor(kBlack);  
-  TH1D* CT14nlo	 = (TH1D*)fout->Get("NLO_CT14_NLO_R04_jtpt")	 ;
+  TH1D* CT14nlo	 = (TH1D*)fout->Get("NLO_CT14_NLO_R03_jtpt")	 ;
   CT14nlo->SetMarkerSize(0);
   CT14nlo->SetLineColor(kGreen);
-  TH1D* NNPDFnnlo= (TH1D*)fout->Get("NLO_NNPDF_NLO_R04_jtpt")    ;
+  TH1D* NNPDFnnlo= (TH1D*)fout->Get("NLO_NNPDF_NLO_R03_jtpt")    ;
   NNPDFnnlo->SetMarkerSize(0);
   NNPDFnnlo->SetLineColor(kCyan-6);  
   
@@ -2267,11 +2267,11 @@ void makeCombinedPlots_closure(std::string outRootFile="", TCanvas* canvForPrint
 
 
   // thy spectra, ratios #2 etc. ----------------------------------------------  
-  TH1D* HERAPDF	 = (TH1D*)fout->Get("NLO_HERAPDF105_NLO_R04_jtpt")	 ;
+  TH1D* HERAPDF	 = (TH1D*)fout->Get("NLO_HERAPDF105_NLO_R03_jtpt")	 ;
   HERAPDF->SetMarkerSize(0);
   HERAPDF->SetLineColor(kViolet-5);  
   
-  TH1D* MMHTnlo	 = (TH1D*)fout->Get("NLO_MMHT2014_NLO_R04_jtpt")	 ;
+  TH1D* MMHTnlo	 = (TH1D*)fout->Get("NLO_MMHT2014_NLO_R03_jtpt")	 ;
   MMHTnlo->SetMarkerSize(0);
   MMHTnlo->SetLineColor(kOrange+7);    
   

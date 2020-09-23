@@ -3,7 +3,7 @@
 //const std::string SPLINE_STR="spline";
 //const std::string FIT_STR="fit";
 const int CANVX=1200, CANVY=1000;
-const int xsecorder=1;//0--> LO, 1--> NLO, 2--> NNLO... etc.
+const int xsecorder=0;//0--> LO, 1--> NLO, 2--> NNLO... etc.
 
 const bool printBaseDebug=true;
 const bool useHistSigmaFit=false;
@@ -15,8 +15,8 @@ const bool setThyPDFErrors=true;
 //const int nEvents=1e+08;  ///typical
 //const int nEvents=5e+07;  /// debug nevents
 //const int nEvents=1e+07;  /// debug nevents
-//const int nEvents=1e+08;  /// typical nevents
-const int nEvents=1e+06;  /// debug nevents
+const int nEvents=1e+08;  /// typical nevents
+//const int nEvents=1e+06;  /// debug nevents
 
 //// LO NPCs
 
