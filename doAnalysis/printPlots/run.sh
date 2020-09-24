@@ -2,8 +2,8 @@
 
 
 dojetQAPlots=1
-dojetTrigQAPlots=1
-dojetIDQAPlots=1
+dojetTrigQAPlots=0
+dojetIDQAPlots=0
 dojetMultPlots=0
 scpOutput=0
 
@@ -52,9 +52,9 @@ then
     #scp2Serin /home/ilaflott/5p02TeV_ppJetAnalysis/CMSSW_7_5_8/src/doAnalysis/printPlots/output/ak4PF_HPtJetTrig_semiOffPy8_00eta30_tupel_wMB_wJetID_jetPlots.pdf
     #source run_printPlots_jetPlots.sh "4" "04.16.19_outputCondor" "04-16-19" "0.0eta3.0_tupel"    "04.16.19_outputCondor" "04-16-19" "0.0eta3.0_wJetID"   "00eta30_tupel_noMB_wJetID"
     #scp2Serin /home/ilaflott/5p02TeV_ppJetAnalysis/CMSSW_7_5_8/src/doAnalysis/printPlots/output/ak4PF_HPtJetTrig_semiOffPy8_00eta30_tupel_noMB_wJetID_jetPlots.pdf
-    source run_printPlots_jetPlots.sh "3" "07.12.19_outputCondor" "07-12-19" "0.0eta2.0_SMPbins_withJECsys"    "06.07.19_outputCondor" "06-07-19" "0.0eta2.0"   "00eta20_noMB_wJetID"
+    source run_printPlots_jetPlots.sh "3" "06.25.19_outputCondor" "06-25-19" "0.0eta2.0_SMPbins"    "05.02.19_outputCondor" "05-02-19" "0eta2"   "00eta20_noMB_wJetID"
 	
-    
+#format for the above should be: R datadir dataInDate dataEtaBin mcdir mcInDate MCEtaBin outtag
 
 
     
