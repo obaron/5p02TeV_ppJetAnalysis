@@ -367,8 +367,8 @@ then
  ##For my AK3PF analysis I will not need MB (min bias)
    #source run_printPlots_jetIDPlots_v2.sh "3" "06.26.19_outputCondor" "06-25-19"  "0.0eta3.0_tupel"  "00eta30_tupel_wMB" "ppData"
   
-   source run_printPlots_jetIDPlots_v2.sh "3" "06.25.19_outputCondor" "06-25-19"  "0.0eta3.0_tupel"  "00eta30_tupel_noMB" "ppData"
-   #source run_printPlots_jetIDPlots_v2.sh "3" "06.25.19_outputCondor" "06-25-19"  "jetPlots_0.0eta2.0"  "SMPbin" "ppData"
+   #source run_printPlots_jetIDPlots_v2.sh "3" "06.25.19_outputCondor" "06-25-19"  "0.0eta3.0_tupel"  "00eta30_tupel_noMB" "ppData"
+   source run_printPlots_jetIDPlots_v2.sh "3" "06.25.19_outputCondor" "06-25-19"  "0.0eta2.0_SMPbins"  "jetIDQA" "ppData"
  
     #source run_printPlots_jetIDPlots_v2.sh "4" "04.16.19_outputCondor" "04-16-19"  "0.0eta3.0_incjetana"  "00eta30_incjetana_wMB" "ppData"
     #source run_printPlots_jetIDPlots_v2.sh "4" "04.16.19_outputCondor" "04-16-19"  "0.0eta3.0_incjetana"  "00eta30_incjetana_noMB" "ppData"

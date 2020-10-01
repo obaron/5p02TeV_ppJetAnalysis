@@ -9,7 +9,7 @@ const bool drawJetIDPlots=true;
 const bool drawJetConstituentPlots=true, drawDijetPlots=false;
 
 const bool drawJetQAPlots=false;
-const bool drawTupelJetQAPlots=true&&!drawJetQAPlots;
+const bool drawTupelJetQAPlots=false&&!drawJetQAPlots;
 //bool useMB=false;
 const int Netabins=6;
 const bool print_incjetana_tupelequiv=false;
@@ -35,13 +35,16 @@ int printPlots_jetIDPlots_v2(const std::string input_condorDir_jetID ,
   if(debugMode)std::cout<<"jetType string is = "<<jetType<<std::endl;
   if(debugMode)std::cout<<"fullJetType string is = "<<fullJetType<<std::endl;
   
-  bool useMB;
-  std::string input_ppData_Filename_MB="HighPtJetTrig_" +fullJetType+ "-allFiles.root";
-  std::string input_ppData_Filename_noMB="HighPtJetTrig_noMB_" +fullJetType+ "-allFiles.root";
-  std::string input_ppData_Filename;
+ // bool useMB;
+  std::string input_ppData_Filename="HighPtJetTrig_noMB_" +fullJetType+ "-allFiles.root"; // noMB_ hardcoded because I do not need MB - Owen, 10/01/2020
+//  std::string input_ppData_Filename_MB="HighPtJetTrig_" +fullJetType+ "-allFiles.root";
+//  std::string input_ppData_Filename_noMB="HighPtJetTrig_noMB_" +fullJetType+ "-allFiles.root";
+//  std::string input_ppData_Filename;
 
   //put together input file strings
-  if(output_PDFname_base.find("wMB")!=std::string::npos) {
+
+//I am not using minbias data so I am commenting this out as the wMB and noMB vars are not in my readForests output directories - Owen, 10/01/2020
+/*   if(output_PDFname_base.find("wMB")!=std::string::npos) {
     std::cout<<"using MinBias data!"<<std::endl;
     useMB=true;
   }
@@ -55,6 +58,8 @@ int printPlots_jetIDPlots_v2(const std::string input_condorDir_jetID ,
     input_ppData_Filename=input_ppData_Filename_MB;
   else
     input_ppData_Filename=input_ppData_Filename_noMB;
+*/
+
   std::cout<<"input_ppData_Filename="<<input_ppData_Filename<<std::endl;
   //assert(false);
 
