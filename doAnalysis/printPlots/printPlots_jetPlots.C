@@ -150,7 +150,7 @@ int printPlots_jetPlots(const std::string input_ppData_condorDir , const std::st
     }
     if(!(finMC->IsZombie())){
       std::cout<<"calling printMCJetCountReport"<<std::endl;
-      printMCJetCountReport( (TFile*)finMC);    
+      //printMCJetCountReport( (TFile*)finMC);     COMMENTED OUT 9/25/2020 due to crashes
     }
     //std::cout<<"skipping evt/jet QA counts + plots..."<<std::endl<<std::endl;
     theLumi=intgrtdLumi;

@@ -5,9 +5,9 @@
 ## not-busy cluster --> can use smaller # of files per job --> shorter run time but occupies more cluster machines
 
 subm_ppData_jetPlots=0
-subm_ppMC_jetPlots=1
+subm_ppMC_jetPlots=0
 subm_ppMC_JERS=0
-subm_ppMC_unf=0
+subm_ppMC_unf=1
 subm_ppMC_MCEff=0
 
 #rarely used

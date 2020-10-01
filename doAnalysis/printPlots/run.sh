@@ -1,9 +1,9 @@
 #!/bin/bash
 
 
-dojetQAPlots=1
+dojetQAPlots=0
 dojetTrigQAPlots=0
-dojetIDQAPlots=0
+dojetIDQAPlots=1
 dojetMultPlots=0
 scpOutput=0
 
@@ -52,7 +52,8 @@ then
     #scp2Serin /home/ilaflott/5p02TeV_ppJetAnalysis/CMSSW_7_5_8/src/doAnalysis/printPlots/output/ak4PF_HPtJetTrig_semiOffPy8_00eta30_tupel_wMB_wJetID_jetPlots.pdf
     #source run_printPlots_jetPlots.sh "4" "04.16.19_outputCondor" "04-16-19" "0.0eta3.0_tupel"    "04.16.19_outputCondor" "04-16-19" "0.0eta3.0_wJetID"   "00eta30_tupel_noMB_wJetID"
     #scp2Serin /home/ilaflott/5p02TeV_ppJetAnalysis/CMSSW_7_5_8/src/doAnalysis/printPlots/output/ak4PF_HPtJetTrig_semiOffPy8_00eta30_tupel_noMB_wJetID_jetPlots.pdf
-    source run_printPlots_jetPlots.sh "3" "06.25.19_outputCondor" "06-25-19" "0.0eta2.0_SMPbins"    "05.02.19_outputCondor" "05-02-19" "0eta2"   "00eta20_noMB_wJetID"
+    #source run_printPlots_jetPlots.sh "3" "06.25.19_outputCondor" "06-25-19" "0.0eta2.0_SMPbins"    "05.02.19_outputCondor" "05-02-19" "0eta2"   "00eta20_noMB_wJetID"
+    source run_printPlots_jetPlots.sh "3" "06.25.19_outputCondor" "06-25-19" "0.0eta2.0_SMPbins"    "09.25.20_outputCondor" "09-25-20" "0.0eta2.0"   "00eta20_noMB_wJetID"
 	
 #format for the above should be: R datadir dataInDate dataEtaBin mcdir mcInDate MCEtaBin outtag
 
@@ -84,7 +85,7 @@ then
     echo ""
     echo "compiling printPlots_jetTrig.C"
     echo ""
-    JETTRIGOUTDIR=/home/ilaflott/5p02TeV_ppJetAnalysis/CMSSW_7_5_8/src/doAnalysis/printPlots/output
+    JETTRIGOUTDIR=/home/obaron/5p02TeV_ppJetAnalysis/CMSSW_7_5_8/src/doAnalysis/printPlots/output
     rootcompile printPlots_jetTrig.C
     
     ##############################################
@@ -302,7 +303,8 @@ then
     #scp2Serin  "${JETTRIGOUTDIR}/ak4PF_HPtJetTrig_00eta30_05.01.19_wJetID_incjetana_*MB_isHLTforDupeSkip_wTrgPt_HLTMBexclu_jetTrig.*"
 
     ##
-    source run_printPlots_jetTrig.sh "4" "06.07.19_outputCondor" "06-07-19" "0.0eta2.0_SMPbins_withJECsys"      "00eta20_06.07.19_wJetID_incjetana_noMB_SMPbins_withJECsys"
+    source run_printPlots_jetTrig.sh "3" "06.07.19_outputCondor" "06-07-19" "0.0eta2.0_SMPbins_withJECsys"      "00eta20_06.07.19_wJetID_incjetana_noMB_SMPbins_withJECsys"
+   # source run_printPlots_jetTrig.sh "4" "06.07.19_outputCondor" "06-07-19" "0.0eta2.0_SMPbins_withJECsys"      "00eta20_06.07.19_wJetID_incjetana_noMB_SMPbins_withJECsys"
     #source run_printPlots_jetTrig.sh "4" "05.01.19_outputCondor" "05-01-19" "0.0eta3.0_isHLTforDupeSkip"       "00eta30_05.01.19_wJetID_incjetana_wMB_isHLTforDupeSkip_wTrgPt_HLTMBexclu"
     
     #scp2Serin  "${JETTRIGOUTDIR}/ak4PF_HPtJetTrig_00eta30_05.01.19_wJetID_incjetana_*MB_isHLTforDupeSkip_wTrgPt_HLTMBexclu_jetTrig.*"
@@ -359,9 +361,15 @@ then
     
     #source run_printPlots_jetIDPlots.sh "4" "11.14.18_outputCondor" "11-14-18"  "0.0eta2.0"  "0.0eta2.0_NoJetID" "00eta20" "ppMC"
     
-    source run_printPlots_jetIDPlots_v2.sh "4" "04.16.19_outputCondor" "04-16-19"  "0.0eta3.0_tupel"  "00eta30_tupel_wMB" "ppData"
-    source run_printPlots_jetIDPlots_v2.sh "4" "04.16.19_outputCondor" "04-16-19"  "0.0eta3.0_tupel"  "00eta30_tupel_noMB" "ppData"
-    
+ #   source run_printPlots_jetIDPlots_v2.sh "4" "04.16.19_outputCondor" "04-16-19"  "0.0eta3.0_tupel"  "00eta30_tupel_wMB" "ppData"
+ #   source run_printPlots_jetIDPlots_v2.sh "4" "04.16.19_outputCondor" "04-16-19"  "0.0eta3.0_tupel"  "00eta30_tupel_noMB" "ppData"
+ 
+ ##For my AK3PF analysis I will not need MB (min bias)
+   #source run_printPlots_jetIDPlots_v2.sh "3" "06.26.19_outputCondor" "06-25-19"  "0.0eta3.0_tupel"  "00eta30_tupel_wMB" "ppData"
+  
+   source run_printPlots_jetIDPlots_v2.sh "3" "06.25.19_outputCondor" "06-25-19"  "0.0eta3.0_tupel"  "00eta30_tupel_noMB" "ppData"
+   #source run_printPlots_jetIDPlots_v2.sh "3" "06.25.19_outputCondor" "06-25-19"  "jetPlots_0.0eta2.0"  "SMPbin" "ppData"
+ 
     #source run_printPlots_jetIDPlots_v2.sh "4" "04.16.19_outputCondor" "04-16-19"  "0.0eta3.0_incjetana"  "00eta30_incjetana_wMB" "ppData"
     #source run_printPlots_jetIDPlots_v2.sh "4" "04.16.19_outputCondor" "04-16-19"  "0.0eta3.0_incjetana"  "00eta30_incjetana_noMB" "ppData"
     

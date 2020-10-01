@@ -10,7 +10,7 @@ const std::string SCRATCH_BASE=
   "/cms/heavyion/obaron/5p02TeV_ppJetAnalysis/outputCondor/";
 //  "/export/d00/scratch/ilaflott/5p02TeV_ppJetAnalysis/";
 const std::string HOME_BASE=
-  "/home/obaron/5p02TeV_ppJetAnalysis/CMSSW_7_5_8/src/doAnalysis/printPlots_JERS/";
+  "/home/obaron/5p02TeV_ppJetAnalysis/CMSSW_7_5_8/src/doAnalysis/printPlots/";
   //  "/Users/ilaflott/Working/CERNBox/localAnalysis/src/5p02TeV_ppJetAnalysis-master/doAnalysis/printPlots/";
 //"/Users/ilaflott/Working/Dropbox/localAnalysis/src/5p02TeV_ppJetAnalysis-master/doAnalysis/printPlots/";
 

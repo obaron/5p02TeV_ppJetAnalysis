@@ -22,7 +22,7 @@ const std::string defDataOutputName="readForests_ppData_defOut_LowerJets_jetPlot
 //const std::string defMCInFilelist="filelists/5p02TeV_Py8_CUETP8M1_QCDjetAllPtBins_forests.txt";
 const std::string defMCInFilelist="filelists/test_readForests_ppMC_Py8_CUETP8M1_forests_local.txt";
 const std::string defMCOutputName="readForests_ppMC_defOut_jetPlots.root";
-const int defRadius=4;
+const int defRadius=3;
 const std::string defJetType="PF";
 const bool defDebugMode=true;
 const float defEtaCutLo=0.0, defEtaCutHi=2.0;//really absetacut, don't use negative numbers
@@ -52,7 +52,7 @@ const float jetQAPtCut=56.;//need a "QA" pt cut to make sure jets at low pT for 
 //for MC jets only
 const float genJetPtCut=43.;//49.; 
 const float genJetPtCut_Hi=jtPtCut_Hi; 
-const float gendrCut=0.1;
+const float gendrCut=99;
 
 //for dijet histograms only
 const float ldJetPtCut=76., subldJetPtCut=56., ptAveCut=subldJetPtCut, dPhiCut=2./3.*TMath::Pi();//dijet cuts

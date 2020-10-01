@@ -19,7 +19,7 @@ const std::string defMCOutputName="readForests_ppMC_defOut_JERS.root";
 
 int readForests_ppMC_JERS( std::string inFilelist=defMCInFilelist, 
 			   int startfile=0, int endfile=4,
-			   int radius=4, std::string jetType="PF",
+			   int radius=3, std::string jetType="PF",
 			   bool debugMode=true, 
 			   std::string outfile=defMCOutputName,
 			   float jtEtaCutLo=0., float jtEtaCutHi=2.0      );

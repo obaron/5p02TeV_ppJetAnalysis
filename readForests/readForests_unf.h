@@ -19,15 +19,15 @@ const std::string defMCOutputName="readForests_ppMC_defOut_unf.root";
 
 int readForests_ppMC_unf( std::string inFilelist=defMCInFilelist, 
 			  int startfile=0, int endfile=4,
-			   int radius=4, std::string jetType="PF",
+			   int radius=3, std::string jetType="PF",
 			   bool debugMode=true, 
 			   std::string outfile=defMCOutputName,
 			   float jtEtaCutLo=0., float jtEtaCutHi=2.0      );
 
 ////UNF CUTS: DO NOT CHANGE FOR NOW (6/25/19)
-const float jtPtCut        = 43.;
+const float jtPtCut        = 28.;
 const float jtPtCut_Hi     = 1410.;
-const float genJetPtCut    = 43.;
+const float genJetPtCut    = 28.;
 const float genJetPtCut_Hi = 1410.;
 
 // Apr 29th 2016
