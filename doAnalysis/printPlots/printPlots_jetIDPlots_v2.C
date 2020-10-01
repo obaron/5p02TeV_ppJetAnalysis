@@ -8,10 +8,10 @@ const bool debugMode=true, doEventCounts=false;
 const bool drawJetIDPlots=true;
 const bool drawJetConstituentPlots=true, drawDijetPlots=false;
 
-const bool drawJetQAPlots=false;
+const bool drawJetQAPlots=true;
 const bool drawTupelJetQAPlots=false&&!drawJetQAPlots;
 //bool useMB=false;
-const int Netabins=6;
+const int Netabins=4;
 const bool print_incjetana_tupelequiv=false;
 
 //int printPlots_jetIDPlots_v2(const std::string input_condorDir ,
@@ -97,6 +97,8 @@ int printPlots_jetIDPlots_v2(const std::string input_condorDir_jetID ,
   std::cout<<" now opening Jet ID file "<<input_Filename<<std::endl;//fullFilename_jetID<<std::endl;
   std::cout<<" in directory: "<<inputDir+input_condorDir_jetID<<std::endl<<std::endl;
   fin_jetID = new TFile(fullFilename_jetID.c_str());      
+  std::cout<<"fullfullFilename_jetID="<<fullFilename_jetID<<std::endl;
+
 
   //  std::cout<<" now opening non-Jet ID file "<<input_Filename<<std::endl;//fullFilename_jetID<<std::endl;
   //  std::cout<<" in directory: "<<inputDir+input_condorDir_nojetID<<std::endl<<std::endl;
@@ -166,7 +168,7 @@ int printPlots_jetIDPlots_v2(const std::string input_condorDir_jetID ,
 	//		      (std::string) thePDFFileName  , 
 	//		      (std::string) fullJetType, (long double) theLumi  );
 	//	printJetIDHist( (TFile*) fin_jetID , (TFile*) fin_nojetID , 
-	printJetIDHist( (TFile*) fin_jetID , NULL, 
+	printJetIDHist( (TFile*) fin_jetID , 
 			(int) j, (bool) isData,
 		      (std::string) thePDFFileName  , 
 			(std::string) fullJetType, (long double) theLumi,  

@@ -4,14 +4,14 @@
 
 
 
-void printJetIDHist( TFile* fin_jetID , TFile* fin_nojetID, 
+void printJetIDHist( TFile* fin_jetID, 
 		     int j, bool isData,
 		     std::string thePDFFileName , std::string fullJetType, 
 		     long double theLumi,  
 		     TFile* fout=NULL) {
   
   
-  if(!fin_jetID || !fin_nojetID ){    std::cout<<"input file not found, cannot look at event counts"<<std::endl; 
+  if(!fin_jetID || !fin_jetID ){    std::cout<<"input file not found, cannot look at event counts"<<std::endl; 
     return; }
   bool funcDebug=false;
     
@@ -63,7 +63,7 @@ void printJetIDHist( TFile* fin_jetID , TFile* fin_nojetID,
   std::string inHistName="hJetQA_0wJetID_"+var[j];
   if(funcDebug)std::cout<<" opening input hist "<<inHistName<<std::endl<<std::endl;      
   
-  TH1F* theNonJetIDHist=(TH1F*) ( (TH1*)fin_nojetID->Get(inHistName.c_str()) );
+  TH1F* theNonJetIDHist=(TH1F*) ( (TH1*)fin_jetID->Get(inHistName.c_str()) );
   if(!theNonJetIDHist){ std::cout<<"input hist not found! skipping hist"<<std::endl;
     return;}
   
