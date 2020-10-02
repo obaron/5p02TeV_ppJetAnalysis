@@ -459,3 +459,62 @@ TLatex* makeTLatex(float x, float y, std::string inputString, float size){
   return t;
 }
 
+void nojetIDHistStyle(TH1* h){
+  //marker
+  h->SetMarkerStyle(kFullDotLarge);
+  h->SetMarkerSize(theDataMarkerSize);
+  h->SetMarkerColor(theDataMarkerColor);
+  
+  //line
+  h->SetLineColor(theDataLineColor);
+  return;
+}
+
+void jetIDHistStyle(TH1* h){
+  //marker
+  h->SetMarkerColorAlpha(theMCMarkerColor,0.);
+  //h->SetMarkerStyle(kFullDotLarge);
+  //h->SetMarkerSize(theMCMarkerSize);
+  
+  //line
+  h->SetLineColorAlpha(theMCLineColor,1.0);
+
+  //fill
+  h->SetFillStyle(3357);
+  h->SetFillColorAlpha(theMCLineColor, 0.3);
+   
+  return;
+}
+
+void jetIDratioHistStyle(TH1* theRatio , std::string h_XAx_Title, std::string h_YAx_Title=AUAxTitle){
+  
+  //theRatio->SetAxisRange(0.,2.,"Y");    
+  //theRatio->SetAxisRange(0.5,1.5,"Y");    
+  //theRatio->SetAxisRange(0.25,1.75,"Y");    
+  //theRatio->SetAxisRange(0.4,1.1,"Y");  
+  //theRatio->GetYaxis()->SetNoExponent(true);  
+  //  theRatio->GetYaxis()->SetMoreLogLabels(true);  
+  theRatio->GetYaxis()->SetLabelFont(43); 
+  theRatio->GetYaxis()->SetLabelSize(14);
+  
+  theRatio->GetYaxis()->SetTitleSize(16);
+  theRatio->GetYaxis()->SetTitleFont(43);
+  theRatio->GetYaxis()->SetTitleOffset(1.1);
+  
+  theRatio->SetYTitle(h_YAx_Title.c_str() );
+  
+  
+  theRatio->GetXaxis()->SetLabelFont(43); 
+  theRatio->GetXaxis()->SetLabelSize(16);
+  
+  theRatio->GetXaxis()->SetTitleSize(20);
+  theRatio->GetXaxis()->SetTitleFont(43);
+  theRatio->GetXaxis()->SetTitleOffset(4.);
+  
+  theRatio->SetXTitle( h_XAx_Title.c_str() );
+  
+  theRatio->SetTitle("");
+  theRatio->SetLineColor( theMCLineColor );    
+  
+  return;
+}

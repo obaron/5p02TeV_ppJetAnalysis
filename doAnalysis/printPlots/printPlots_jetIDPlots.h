@@ -1,11 +1,12 @@
 
-//const double JETQACANVX=1300.;
-//const double JETQACANVY=JETQACANVX;
+const double JETQACANVX=1300.;
+const double JETQACANVY=JETQACANVX;
 //void printJetIDHist( TFile* fin , 
 //		     int j, bool isData,
 //		     std::string thePDFFileName , std::string fullJetType, 
 //		     long double theLumi,  
 //		     TFile* fout=NULL) {
+
 
 void printJetIDHist( TFile* fin, int j, bool isData, int NetabinstoDraw,
 		     std::string thePDFFileName , std::string fullJetType, 
