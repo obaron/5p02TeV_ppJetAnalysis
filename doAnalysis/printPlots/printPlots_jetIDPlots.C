@@ -150,7 +150,7 @@ int printPlots_jetIDPlots(const std::string input_condorDir_jetID ,
     //else jetIDInt="0";
     //for(int jetIDInt=0;jetIDInt<2;jetIDInt++){
     if(drawJetQAPlots){
-      for(int j=0;j<N_vars;j++){
+      for(int j=4;j<N_vars;j++){
 	
 	std::cout<<std::endl;
 	if(debugMode)std::cout<<std::endl<<" var ="<<var[j]<<", j="<<j<<std::endl;

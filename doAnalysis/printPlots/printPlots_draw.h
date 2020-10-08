@@ -56,11 +56,12 @@ const float tupeljetQAxmax[N_tupelvars]={
 100.//  "NeuMult"
 };
 
-const int var_xAx_reBin[]={                                   
+const int var_xAx_reBin[]={   
+  10, 10, 5, 5,     //recojtpt ybins, recojt energy, recojt mass, recojet y
   10, 10,     //reco/rawjtpt  
   //  10, 10, 10,    //no Res, L2Res, L3Res jtpt
   
-  5,  4,      //jteta, phi    
+  5,  2,      //jteta, phi    
 
   1, 5, 5,    //trks	      
   1, 5,                       
@@ -75,32 +76,33 @@ const int var_xAx_reBin[]={
   1, 5, 5,    //e	      				      
   1, 5, 5,    //mu	      				      
   
-  1, 1, 1,    // N Const.     
+  2, 2, 2,    // N Const.     
   
   1, 1, 1,    //xj,Aj,dphi    
   20, 20        //sub/lead jttpt
 };
 
 const float jetQAxmax[]={
+  (1000.),  (1500.),  (300.),  (4.5), //recojtpt ybins, recojt energy, recojt mass, recojet y
   (1000. ), (1000.),             //reco/rawjtpt  
   //  (1000. ), (1000.), (1000.), //jtpt forRes, L2Res, L3Res
 
-  (5.   ), (3.2  ),  		 //jteta, phi    
+  (4.5   ), (3.2  ),  		 //jteta, phi    
 
-  (60 ), (2.00), (2.00), 	 //trks	      
-  (60 ), (2.00), 		                 
+  (59) /*(60 )*/, (1.95), (1.95), 	 //trks	      //note; 60 is commented out because of the way axis range setting works
+  (59) /*(60 )*/, (1.95), 		              // see: https://root.cern.ch/doc/master/TAxis_8cxx_source.html#l00405 
+                                                      // the way to "catch NaN" causes the overflow bin in these hists to be drawn
+  (59 ), (1.95), (1.95), 	 //ph	      
+  (59 ), (1.95), 		                 
 
-  (60 ), (2.00), (2.00), 	 //ph	      
-  (60 ), (2.00), 		                 
-
-  (60 ), (2.00), (2.00),	 //ch  	      
-  (60 ), (2.00), 		              
+  (59 ), (1.95), (1.95),	 //ch  	      
+  (59 ), (1.95), 		              
    
-  (20 ), (2.00), (2.00),	 //ne	      
-  (10 ), (2.00), (2.00),	 //e	      
-  (10 ), (2.00), (2.00),	 //mu	      
+  (19 ), (1.95), (1.95),	 //ne	      
+  (9 ), (1.95), (1.95),	 //e	      
+  (9 ), (1.95), (1.95),	 //mu	      
 
-  (100),   (100),   (100),   	 // N Const.     
+  (98),   (98),   (98),   	 // N Const.     
 
   (1.   ), (1.  ),   (3.2  ), 	 //xj,Aj,dphi    
   (1000. ), (1000.) 		 //sub/lead jttpt
@@ -108,6 +110,7 @@ const float jetQAxmax[]={
 
 
 const float jetQAxmin[]={
+  (50.),  (50.),  (0.),  (-5.), //recojtpt ybins, recojt energy, recojt mass, recojet y
   (50. ), (50.  ) ,           //reco/rawjtpt  
   //  (50. ), (50.  ) ,         (50.  ) ,        //jtpt forRes, L2Res, L3 Res
 
@@ -131,6 +134,7 @@ const float jetQAxmin[]={
   (0.  ), (0.   ) , (2.0),      //xj,Aj,dphi    
   (50. ), (50.  )          //sub/lead jttpt
 };		
+
 
 
 
@@ -486,35 +490,3 @@ void jetIDHistStyle(TH1* h){
   return;
 }
 
-void jetIDratioHistStyle(TH1* theRatio , std::string h_XAx_Title, std::string h_YAx_Title=AUAxTitle){
-  
-  //theRatio->SetAxisRange(0.,2.,"Y");    
-  //theRatio->SetAxisRange(0.5,1.5,"Y");    
-  //theRatio->SetAxisRange(0.25,1.75,"Y");    
-  //theRatio->SetAxisRange(0.4,1.1,"Y");  
-  //theRatio->GetYaxis()->SetNoExponent(true);  
-  //  theRatio->GetYaxis()->SetMoreLogLabels(true);  
-  theRatio->GetYaxis()->SetLabelFont(43); 
-  theRatio->GetYaxis()->SetLabelSize(14);
-  
-  theRatio->GetYaxis()->SetTitleSize(16);
-  theRatio->GetYaxis()->SetTitleFont(43);
-  theRatio->GetYaxis()->SetTitleOffset(1.1);
-  
-  theRatio->SetYTitle(h_YAx_Title.c_str() );
-  
-  
-  theRatio->GetXaxis()->SetLabelFont(43); 
-  theRatio->GetXaxis()->SetLabelSize(16);
-  
-  theRatio->GetXaxis()->SetTitleSize(20);
-  theRatio->GetXaxis()->SetTitleFont(43);
-  theRatio->GetXaxis()->SetTitleOffset(4.);
-  
-  theRatio->SetXTitle( h_XAx_Title.c_str() );
-  
-  theRatio->SetTitle("");
-  theRatio->SetLineColor( theMCLineColor );    
-  
-  return;
-}

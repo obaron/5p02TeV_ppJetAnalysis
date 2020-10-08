@@ -12,7 +12,7 @@ etabinint=-1 ##-1 for full eta range of output, 0,1,2,3... for |y| in steps of 0
 
 ###LO Unf ###
 #MC
-doLOMCUnfolding=0
+doLOMCUnfolding=1
 LOMCBayeskIter=6
 LOMCSVDkReg=6
 #Data
@@ -27,7 +27,7 @@ doNLOMCUnfolding=0
 NLOMCBayeskIter=6
 NLOMCSVDkReg=6
 #Data
-doDataUnfoldingwNLO=1
+doDataUnfoldingwNLO=0
 dataNLOBayeskIter=6
 dataNLOSVDkReg=6
 
