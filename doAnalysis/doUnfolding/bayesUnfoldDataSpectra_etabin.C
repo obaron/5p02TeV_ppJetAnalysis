@@ -103,7 +103,7 @@ int bayesUnfoldDataSpectra_etabin(	std::string inFile_Data_dir= "06.25.19_output
   if(!useSimpBins)std::cout<<"using analysis pt bins"<<std::endl;
   else std::cout<<"using simple pt bins"<<std::endl<<std::endl;
   
-//int     nbins_pt_gen=-1;	already declared in .h					 
+int     nbins_pt_gen=-1;						 
   double* boundaries_pt_gen=setBinning_etabin(etabinint, ptbintype, &nbins_pt_gen);  
   int     nbins_pt_reco=-1;
   double* boundaries_pt_reco=setBinning_etabin(etabinint, ptbintype, &nbins_pt_reco);  
@@ -2113,14 +2113,17 @@ int bayesUnfoldDataSpectra_etabin(	std::string inFile_Data_dir= "06.25.19_output
     canv_mc_fakes_spectra ->SetTitle("PY8 Fakes Spectra Canvas");   canv_mc_fakes_spectra  ->Write("canv_mc_fakes_spectra");
     canv_thy_spectra_1    ->SetTitle("NLO Thy Spectra 1 Canvas");  canv_thy_spectra_1     ->Write("canv_thy_spectra_1");
     canv_thy_spectra_2    ->SetTitle("NLO Thy Spectra 2 Canvas");  canv_thy_spectra_2     ->Write("canv_thy_spectra_2");                                
-    
+  std::cout<<"break one"<<std::endl;
+  
     canv_gen_ratio        ->SetTitle("PY8 Truth Ratios Canvas");   canv_gen_ratio          ->Write("canv_gen_ratio");
     canv_rec_ratio        ->SetTitle("Data Meas Ratios Canvas");  canv_rec_ratio          ->Write("canv_meas_ratio");
     canv_fold_ratio       ->SetTitle("Fold Test Ratios Canvas");  canv_fold_ratio         ->Write("canv_fold_ratio");
     canv_fold_ratio2       ->SetTitle("Fold Test Ratios v2 Canvas");  canv_fold_ratio2         ->Write("canv_fold_ratio2");
-    canv_thy_ratio        ->SetTitle("NLO Thy Ratios Canvas");    canv_thy_ratio          ->Write("canv_thy_ratio");                                
-    canv_thy_ratio2        ->SetTitle("NLO Thy Ratios Canvas");    canv_thy_ratio2          ->Write("canv_thy_ratio2");                                
-       
+   if(compareToNLOThy){
+	canv_thy_ratio        ->SetTitle("NLO Thy Ratios Canvas");    canv_thy_ratio          ->Write("canv_thy_ratio");                                
+	canv_thy_ratio2        ->SetTitle("NLO Thy Ratios Canvas");    canv_thy_ratio2          ->Write("canv_thy_ratio2");                                
+   }
+//  std::cout<<"break two"<<std::endl;
 
     canv_covmat           ->SetTitle("Covariance Matrix Canvas");           canv_covmat        ->Write("canv_covmat");
     canv_absval_covmat    ->SetTitle("Abs Val. Covariance Matrix Canvas");  canv_absval_covmat ->Write("canv_covmatabsval");
@@ -2136,7 +2139,7 @@ int bayesUnfoldDataSpectra_etabin(	std::string inFile_Data_dir= "06.25.19_output
     if(dokIterQA){ canv_3x3pearson->SetTitle("3x3 PearsonMatrix kIter QA Canvas");    canv_3x3pearson->Write("canv_3x3pearson");}
     if(dokIterQA) canv_kIterRatio->Write();
     if(dokIterQA) canv_chi2iter->Write();
-
+//  std::cout<<"break three"<<std::endl;
 
 
     if(doJECsys) canv_JECsysterrs_ratio->Write(   "canv_JECsyserrs_ratio");
