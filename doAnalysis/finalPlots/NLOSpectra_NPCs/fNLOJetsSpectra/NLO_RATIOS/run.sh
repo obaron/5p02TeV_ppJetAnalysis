@@ -1,0 +1,149 @@
+#cant use shebang beginning in bash script when executing on mac... why?!
+
+root -l <<EOF
+.L MAKE_NLO_RATIOS.C++
+
+MAKE_NLO_RATIOS(3,0,0)
+MAKE_NLO_RATIOS(3,1,0)
+MAKE_NLO_RATIOS(3,2,0)
+MAKE_NLO_RATIOS(3,3,0)
+MAKE_NLO_RATIOS(3,0,1)
+MAKE_NLO_RATIOS(3,1,1)
+MAKE_NLO_RATIOS(3,2,1)
+MAKE_NLO_RATIOS(3,3,1)
+
+MAKE_NLO_RATIOS(4,0,0)
+MAKE_NLO_RATIOS(4,1,0)
+MAKE_NLO_RATIOS(4,2,0)
+MAKE_NLO_RATIOS(4,3,0)
+MAKE_NLO_RATIOS(4,0,1)
+MAKE_NLO_RATIOS(4,1,1)
+MAKE_NLO_RATIOS(4,2,1)
+MAKE_NLO_RATIOS(4,3,1)
+
+MAKE_NLO_RATIOS(7,0,0)
+MAKE_NLO_RATIOS(7,1,0)
+MAKE_NLO_RATIOS(7,2,0)
+MAKE_NLO_RATIOS(7,3,0)
+MAKE_NLO_RATIOS(7,0,1)
+MAKE_NLO_RATIOS(7,1,1)
+MAKE_NLO_RATIOS(7,2,1)
+MAKE_NLO_RATIOS(7,3,1)
+
+.L MAKE_NLO_R_RATIOS.C++
+
+MAKE_NLO_R_RATIOS("NNPDF",4,3,0)
+MAKE_NLO_R_RATIOS("NNPDF",7,3,0)
+MAKE_NLO_R_RATIOS("NNPDF",7,4,0)
+MAKE_NLO_R_RATIOS("NNPDF",4,3,1)
+MAKE_NLO_R_RATIOS("NNPDF",7,3,1)
+MAKE_NLO_R_RATIOS("NNPDF",7,4,1)
+
+MAKE_NLO_R_RATIOS("MMHT",4,3,0)
+MAKE_NLO_R_RATIOS("MMHT",7,3,0)
+MAKE_NLO_R_RATIOS("MMHT",7,4,0)
+MAKE_NLO_R_RATIOS("MMHT",4,3,1)
+MAKE_NLO_R_RATIOS("MMHT",7,3,1)
+MAKE_NLO_R_RATIOS("MMHT",7,4,1)
+
+MAKE_NLO_R_RATIOS("HERA",4,3,0)
+MAKE_NLO_R_RATIOS("HERA",7,3,0)
+MAKE_NLO_R_RATIOS("HERA",7,4,0)
+MAKE_NLO_R_RATIOS("HERA",4,3,1)
+MAKE_NLO_R_RATIOS("HERA",7,3,1)
+MAKE_NLO_R_RATIOS("HERA",7,4,1)
+
+MAKE_NLO_R_RATIOS("CT10",4,3,0)
+MAKE_NLO_R_RATIOS("CT10",7,3,0)
+MAKE_NLO_R_RATIOS("CT10",7,4,0)
+MAKE_NLO_R_RATIOS("CT10",4,3,1)
+MAKE_NLO_R_RATIOS("CT10",7,3,1)
+MAKE_NLO_R_RATIOS("CT10",7,4,1)
+
+MAKE_NLO_R_RATIOS("CT14",4,3,0)
+MAKE_NLO_R_RATIOS("CT14",7,3,0)
+MAKE_NLO_R_RATIOS("CT14",7,4,0)
+MAKE_NLO_R_RATIOS("CT14",4,3,1)
+MAKE_NLO_R_RATIOS("CT14",7,3,1)
+MAKE_NLO_R_RATIOS("CT14",7,4,1)
+
+
+
+
+
+
+
+
+
+.q
+EOF
+
+
+#return
+
+
+#root -l -q 'MAKE_NLO_RATIOS.C++(3,0,0)'
+#root -l -q 'MAKE_NLO_RATIOS.C++(3,1,0)'
+#root -l -q 'MAKE_NLO_RATIOS.C++(3,2,0)'
+#root -l -q 'MAKE_NLO_RATIOS.C++(3,3,0)'
+#return
+#root -l -q 'MAKE_NLO_RATIOS.C++(4,0,0)'
+#root -l -q 'MAKE_NLO_RATIOS.C++(4,1,0)'
+#root -l -q 'MAKE_NLO_RATIOS.C++(4,2,0)'
+#root -l -q 'MAKE_NLO_RATIOS.C++(4,3,0)'
+#
+#root -l -q 'MAKE_NLO_RATIOS.C++(7,0,0)'
+#root -l -q 'MAKE_NLO_RATIOS.C++(7,1,0)'
+#root -l -q 'MAKE_NLO_RATIOS.C++(7,2,0)'
+#root -l -q 'MAKE_NLO_RATIOS.C++(7,3,0)'
+#
+#root -l -q 'MAKE_NLO_RATIOS.C++(3,0,1)'
+#root -l -q 'MAKE_NLO_RATIOS.C++(3,1,1)'
+#root -l -q 'MAKE_NLO_RATIOS.C++(3,2,1)'
+#root -l -q 'MAKE_NLO_RATIOS.C++(3,3,1)'
+#				    
+#root -l -q 'MAKE_NLO_RATIOS.C++(4,0,1)'
+#root -l -q 'MAKE_NLO_RATIOS.C++(4,1,1)'
+#root -l -q 'MAKE_NLO_RATIOS.C++(4,2,1)'
+#root -l -q 'MAKE_NLO_RATIOS.C++(4,3,1)'
+#				    
+#root -l -q 'MAKE_NLO_RATIOS.C++(7,0,1)'
+#root -l -q 'MAKE_NLO_RATIOS.C++(7,1,1)'
+#root -l -q 'MAKE_NLO_RATIOS.C++(7,2,1)'
+#root -l -q 'MAKE_NLO_RATIOS.C++(7,3,1)'
+
+
+#root -l -q 'MAKE_NLO_R_RATIOS.C++("NNPDF",4,3,0)'
+#root -l -q 'MAKE_NLO_R_RATIOS.C++("NNPDF",7,3,0)'
+#root -l -q 'MAKE_NLO_R_RATIOS.C++("NNPDF",7,4,0)'
+#root -l -q 'MAKE_NLO_R_RATIOS.C++("NNPDF",4,3,1)'
+#root -l -q 'MAKE_NLO_R_RATIOS.C++("NNPDF",7,3,1)'
+#root -l -q 'MAKE_NLO_R_RATIOS.C++("NNPDF",7,4,1)'
+#
+#root -l -q 'MAKE_NLO_R_RATIOS.C++("MMHT",4,3,0)'
+#root -l -q 'MAKE_NLO_R_RATIOS.C++("MMHT",7,3,0)'
+#root -l -q 'MAKE_NLO_R_RATIOS.C++("MMHT",7,4,0)'
+#root -l -q 'MAKE_NLO_R_RATIOS.C++("MMHT",4,3,1)'
+#root -l -q 'MAKE_NLO_R_RATIOS.C++("MMHT",7,3,1)'
+#root -l -q 'MAKE_NLO_R_RATIOS.C++("MMHT",7,4,1)'
+#
+#root -l -q 'MAKE_NLO_R_RATIOS.C++("HERA",4,3,0)'
+#root -l -q 'MAKE_NLO_R_RATIOS.C++("HERA",7,3,0)'
+#root -l -q 'MAKE_NLO_R_RATIOS.C++("HERA",7,4,0)'
+#root -l -q 'MAKE_NLO_R_RATIOS.C++("HERA",4,3,1)'
+#root -l -q 'MAKE_NLO_R_RATIOS.C++("HERA",7,3,1)'
+#root -l -q 'MAKE_NLO_R_RATIOS.C++("HERA",7,4,1)'
+#
+#root -l -q 'MAKE_NLO_R_RATIOS.C++("CT10",4,3,0)'
+#root -l -q 'MAKE_NLO_R_RATIOS.C++("CT10",7,3,0)'
+#root -l -q 'MAKE_NLO_R_RATIOS.C++("CT10",7,4,0)'
+#root -l -q 'MAKE_NLO_R_RATIOS.C++("CT10",4,3,1)'
+#root -l -q 'MAKE_NLO_R_RATIOS.C++("CT10",7,3,1)'
+#root -l -q 'MAKE_NLO_R_RATIOS.C++("CT10",7,4,1)'
+#
+#root -l -q 'MAKE_NLO_R_RATIOS.C++("CT14",4,3,0)'
+#root -l -q 'MAKE_NLO_R_RATIOS.C++("CT14",7,3,0)'
+#root -l -q 'MAKE_NLO_R_RATIOS.C++("CT14",7,4,0)'
+#root -l -q 'MAKE_NLO_R_RATIOS.C++("CT14",4,3,1)'
+#root -l -q 'MAKE_NLO_R_RATIOS.C++("CT14",7,3,1)'
+#root -l -q 'MAKE_NLO_R_RATIOS.C++("CT14",7,4,1)'
