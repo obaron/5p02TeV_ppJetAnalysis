@@ -59,7 +59,7 @@ const std::string PY8_UNFDIR_CLOSURE_shortdir_array[]={
 const int PY8_UNFDIR_CLOSURE_Nfiles=sizeof( PY8_UNFDIR_CLOSURE_file_array )/sizeof(std::string);
 
 //SYSTEMATICS
-const std::string PY8_UNF_DATA_SYST_file_base=PY8_UNF_DATA_file_base;
+const std::string PY8_UNF_DATA_SYST_file_base=PY8_UNF_DATA_file_base;	//This should be OK
 const std::string PY8_UNFDIR_DATA_SYST_file_array[]={ 
   PY8_UNF_DATA_SYST_file_base+"JECsys_LOMC_",
   PY8_UNF_DATA_SYST_file_base+"JERsys_LOMC_"
@@ -127,10 +127,10 @@ const int   NLO_UNFDIR_DATA_SYST_Nfiles=(sizeof(   NLO_UNFDIR_DATA_SYST_file_arr
 // ------------------------------------------------------------------------------- //
 const std::string JERDIR_MC  ="JER/";
 const std::string JERDIR_MC_file_array[]={ 
-  "ak4PF_PY8JER_00eta05_03.18.20_sigmu_geny",
-  "ak4PF_PY8JER_05eta10_03.18.20_sigmu_geny",
-  "ak4PF_PY8JER_10eta15_03.18.20_sigmu_geny",
-  "ak4PF_PY8JER_15eta20_03.18.20_sigmu_geny"
+  "ak3PF_PY8JER_00eta05_09.30.20_sigmu",
+  "ak3PF_PY8JER_05eta10_09.30.20_sigmu",
+  "ak3PF_PY8JER_10eta15_09.30.20_sigmu",
+  "ak3PF_PY8JER_15eta20_09.30.20_sigmu"
 };
 const std::string JERDIR_MC_shortdir_array[]={ 
   "YBIN0",
@@ -160,7 +160,7 @@ const int  VTXWDIR_MC_Nfiles=sizeof(  VTXWDIR_MC_file_array )/sizeof(std::string
 //// JET PLOTS QA
 const std::string JETQA  ="jetPlots/";
 const std::string JETQA_file_array[]={ 
-  "ak4PF_HPtJetTrig_semiOffPy8_00eta20_01.05.21_semifinalv4_jetPlots"
+  "ak3PF_HPtJetTrig_semiOffPy8_00eta20_noMB_wJetID_jetPlots"
   //"ak4PF_HPtJetTrig_semiOffPy8_00eta20_03.18.20_semifinalv3_jetPlots"
 };
 const std::string JETQA_shortdir_array[]={ 

@@ -3,7 +3,8 @@
 
 dojetQAPlots=0
 dojetTrigQAPlots=0
-dojetIDQAPlots=1
+dojetIDQAPlots=0
+dojetIDQAPlots_v2=1
 dojetMultPlots=0
 scpOutput=0
 
@@ -85,7 +86,7 @@ then
     echo ""
     echo "compiling printPlots_jetTrig.C"
     echo ""
-    JETTRIGOUTDIR=/home/obaron/5p02TeV_ppJetAnalysis/CMSSW_7_5_8/src/doAnalysis/printPlots/output
+    JETTRIGOUTDIR=/home/obaron/5p02TeV_ppJetAnalysis/CMSSW_7_5_8/src/doAnalysis/printPlots/output/jettrig
     rootcompile printPlots_jetTrig.C
     
     ##############################################
@@ -394,8 +395,9 @@ then
     #source run_printPlots_jetIDPlots.sh "4" "03.18.20_outputCondor" "03-18-20"  "0.0eta2.5_semifinalv3"  "00eta20_03.18.20_semifinalv3"     "ppMC" 
     
 	#My setup for R3:
-	source run_printPlots_jetIDPlots.sh "3" "06.25.19_outputCondor" "06-25-19"  "0.0eta2.0_SMPbins"  "jetIDQA"  "ppData"
-    #source run_printPlots_jetIDPlots.sh "4" "03.18.20_outputCondor" "03-18-20"  "0.0eta2.5_semifinalv3"  "00eta20_03.18.20_semifinalv3"     "ppMC" 
+	#source run_printPlots_jetIDPlots.sh "3" "06.25.19_outputCondor" "06-25-19"  "0.0eta2.0_SMPbins"  "jetIDQA"  "ppData"
+    source run_printPlots_jetIDPlots.sh "3" "09.30.20_outputCondor" "09-30-20"  "0.0eta2.0"  "00eta20_09.30.20_semifinalv3"     "ppMC" 
+	
     ##############################################
     
     echo ""
@@ -416,6 +418,95 @@ fi
 
 
 
+
+
+
+
+
+
+if [[ $dojetIDQAPlots_v2 -eq 1 ]]
+then
+   
+##OLD: 
+    # echo ""
+# #    echo "compiling printPlots_jetIDPlots.C"
+    # echo "compiling printPlots_jetIDPlots_v2.C"
+    # echo ""
+    
+    # #rootcompile printPlots_jetIDPlots.C
+    # rootcompile printPlots_jetIDPlots_v2.C
+
+    # ##############################################
+    
+    # echo ""
+    # echo "done compiling. Running!"
+    # echo ""
+ 
+#NEW: 10/02/2020
+	echo ""
+    echo "compiling printPlots_jetIDPlots_v2.C"
+    echo ""
+    
+    rootcompile printPlots_jetIDPlots_v2.C
+    
+    ##############################################
+    
+    echo ""
+    echo "done compiling. Running!"
+    echo ""	
+	
+	#source run_printPlots_jetIDPlots.sh "4" "11.06.18_outputCondor" "11-06-18"  "0.0eta0.5_wjetid"  "0.0eta2.0_NOjetid" "00eta05" "ppData"
+    #source run_printPlots_jetIDPlots.sh "4" "11.06.18_outputCondor" "11-06-18"  "0.5eta1.0_wjetid"  "0.0eta2.0_NOjetid" "05eta10" "ppData"
+    #source run_printPlots_jetIDPlots.sh "4" "11.06.18_outputCondor" "11-06-18"  "1.0eta1.5_wjetid"  "0.0eta2.0_NOjetid" "10eta15" "ppData"
+    #source run_printPlots_jetIDPlots.sh "4" "11.06.18_outputCondor" "11-06-18"  "1.5eta2.0_wjetid"  "0.0eta2.0_NOjetid" "15eta20" "ppData"
+    #source run_printPlots_jetIDPlots.sh "4" "11.06.18_outputCondor" "11-06-18"  "0.0eta0.5_wjetid"  "0.0eta2.0_NOjetid" "00eta05" "ppMC"
+    #source run_printPlots_jetIDPlots.sh "4" "11.06.18_outputCondor" "11-06-18"  "0.5eta1.0_wjetid"  "0.0eta2.0_NOjetid" "05eta10" "ppMC"
+    #source run_printPlots_jetIDPlots.sh "4" "11.06.18_outputCondor" "11-06-18"  "1.0eta1.5_wjetid"  "0.0eta2.0_NOjetid" "10eta15" "ppMC"
+    #source run_printPlots_jetIDPlots.sh "4" "11.06.18_outputCondor" "11-06-18"  "1.5eta2.0_wjetid"  "0.0eta2.0_NOjetid" "15eta20" "ppMC"
+
+    #source run_printPlots_jetIDPlots.sh "4" "11.06.18_outputCondor" "11-06-18"  "0.0eta2.0_wjetid"  "0.0eta2.0_NOjetid" "00eta20" "ppData"
+    #source run_printPlots_jetIDPlots.sh "4" "11.06.18_outputCondor" "11-06-18"  "0.0eta2.0_wjetid"  "0.0eta2.0_NOjetid" "00eta20" "ppMC"
+    
+    
+    #source run_printPlots_jetIDPlots.sh "4" "11.14.18_outputCondor" "11-14-18"  "0.0eta2.0_trgPtNoRes"  "0.0eta2.0_trgPtNoRes_NoJetID" "00eta20_trgPtNoRes" "ppData"
+    #source run_printPlots_jetIDPlots.sh "4" "11.14.18_outputCondor" "11-14-18"  "0.0eta2.0_trgPtL2L3Res"  "0.0eta2.0_trgPtL2L3Res_NoJetID" "00eta20_trgPtL2L3Res" "ppData"
+    
+    #source run_printPlots_jetIDPlots.sh "4" "11.14.18_outputCondor" "11-14-18"  "0.0eta2.0"  "0.0eta2.0_NoJetID" "00eta20" "ppMC"
+    
+ #   source run_printPlots_jetIDPlots_v2.sh "4" "04.16.19_outputCondor" "04-16-19"  "0.0eta3.0_tupel"  "00eta30_tupel_wMB" "ppData"
+ #   source run_printPlots_jetIDPlots_v2.sh "4" "04.16.19_outputCondor" "04-16-19"  "0.0eta3.0_tupel"  "00eta30_tupel_noMB" "ppData"
+ 
+## For my AK3PF analysis I will not need MB (min bias)
+   #source run_printPlots_jetIDPlots_v2.sh "3" "06.26.19_outputCondor" "06-25-19"  "0.0eta3.0_tupel"  "00eta30_tupel_wMB" "ppData"
+
+## NO LONGER RUNNING THE OLD _v2 CODE. Instead we run the new run_printPlots_jetIDPlots.sh!  
+   #source run_printPlots_jetIDPlots_v2.sh "3" "06.25.19_outputCondor" "06-25-19"  "0.0eta3.0_tupel"  "00eta30_tupel_noMB" "ppData"
+   #source run_printPlots_jetIDPlots_v2.sh "3" "06.25.19_outputCondor" "06-25-19"  "0.0eta2.0_SMPbins"  "jetIDQA" "ppData"
+ 
+    #source run_printPlots_jetIDPlots_v2.sh "4" "04.16.19_outputCondor" "04-16-19"  "0.0eta3.0_incjetana"  "00eta30_incjetana_wMB" "ppData"
+    #source run_printPlots_jetIDPlots_v2.sh "4" "04.16.19_outputCondor" "04-16-19"  "0.0eta3.0_incjetana"  "00eta30_incjetana_noMB" "ppData"
+##  HERE ARE THE NEW jetID RUNNING COMMANDS:
+    
+	#Ian's setup for R4:
+	#source run_printPlots_jetIDPlots.sh "4" "03.18.20_outputCondor" "03-18-20"  "0.0eta2.5_SMPbins_withjety_semifinalv3"  "00eta20_03.18.20_semifinalv3"     "ppData"
+    #source run_printPlots_jetIDPlots.sh "4" "03.18.20_outputCondor" "03-18-20"  "0.0eta2.5_semifinalv3"  "00eta20_03.18.20_semifinalv3"     "ppMC" 
+    
+	#My setup for R3:
+	#source run_printPlots_jetIDPlots.sh "3" "06.25.19_outputCondor" "06-25-19"  "0.0eta2.0_SMPbins"  "jetIDQA"  "ppData"
+    source run_printPlots_jetIDPlots_v2.sh "3" "09.30.20_outputCondor" "09-30-20"  "0.0eta2.0"  "00eta20_09.30.20_semifinalv3"     "ppMC" 
+	
+    ##############################################
+    
+    echo ""
+    echo "done running jetIDPlots!"
+    echo ""
+
+    #scp2Serin output/\*.\*
+
+    ##############################################
+    
+    #return
+fi
 
 
 
