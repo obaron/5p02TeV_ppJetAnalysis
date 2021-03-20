@@ -86,7 +86,7 @@ void  makeSMPInclJetXsec_PY8unfdata (std::string outdir, TFile* fout){
 
 
   TLegend* leg=makeLegend();
-  leg->SetHeader( "RECO PY8 Unfolded Data   ","C" );
+  leg->SetHeader( "RECO PY8 Unfolded Data   ");
   
   TLegend* mcleg=makeLegend(0.52, 0.72, 0.88, 0.84);
   //mcleg->SetHeader( jettype.c_str(),"C" );
@@ -173,6 +173,7 @@ void  makeSMPInclJetXsec_PY8unfdata_ratios (std::string outdir, TFile* fout){
   
   //first get the plots, clone + divide accordingly. binning should be set for me already, essentially
   for(int i=0; i<netabins; i++){
+cout<<"0"<<endl;	  
     std::string filepath= PY8_UNFDIR_DATA + PY8_UNFDIR_DATA_file_array[i] + ".root";
     TFile* file=TFile::Open(( filepath).c_str(), "READ");
     spectra[i] =  (TH1D*)(
@@ -182,7 +183,7 @@ void  makeSMPInclJetXsec_PY8unfdata_ratios (std::string outdir, TFile* fout){
 				    ("Data_unf_ybin"+std::to_string(i)).c_str() 
 				     )
 			  );
-
+cout<<"1"<<endl;
     mcspectra[i] =  (TH1D*)(
 			    (
 			     (TH1D*)file->Get("MC_truth") 
@@ -190,43 +191,43 @@ void  makeSMPInclJetXsec_PY8unfdata_ratios (std::string outdir, TFile* fout){
 				      ("MC_truth_ybin"+std::to_string(i)).c_str() 
 				       )
 			    );        
-
+cout<<"2"<<endl;
     spectra_JECup[i] =  (TH1D*)(
 				(
-			   (TH1D*)file->Get("JECsys/Data_unf_JECsysup") 
+			   (TH1D*)file->Get("Data_unf_JECsysup") 
 			   )->Clone( 
 				    ("Data_unf_JECsysup_ybin"+std::to_string(i)).c_str() 
 				     )
 			  );
-
+cout<<"3"<<endl;
     spectra_JECdown[i] =  (TH1D*)(
 				(
-				 (TH1D*)file->Get("JECsys/Data_unf_JECsysdown") 
+				 (TH1D*)file->Get("Data_unf_JECsysdown") 
 			   )->Clone( 
 				    ("Data_unf_JECsysdown_ybin"+std::to_string(i)).c_str() 
 				     )
 			  );
-
-    std::string JERsysfilepath= PY8_UNFDIR_DATA + PY8_UNFDIR_DATA_SYST_file_array[1] +YBIN_TAG_array[i]+ ".root";//also has JEC systematics
+cout<<"4"<<endl;
+    std::string JERsysfilepath= PY8_UNFDIR_DATA + PY8_UNFDIR_DATA_SYST_file_array[1] +ETABIN_TAG_array[i]+ ".root";//also has JEC systematics
     TFile* JERsysfile=TFile::Open((JERsysfilepath).c_str(),"READ");
-
+	cout<<"JERsysfile = "<<JERsysfilepath<<endl;
     spectra_JERup[i] =  (TH1D*)(
 				( //TYPO!!! JEC SHOULD BE JER!!! FIX ME!!!
-				 (TH1D*)JERsysfile->Get("JERsys/Data_unf_JERsysup") 
+				 (TH1D*)JERsysfile->Get("Data_unf_JERsysup") 
 			   )->Clone( 
 				    ("Data_unf_JERsysup_ybin"+std::to_string(i)).c_str() 
 				     )
 			  );
-
+cout<<"5"<<endl;
     spectra_JERdown[i] =  (TH1D*)(
 				(
-			   (TH1D*)JERsysfile->Get("JERsys/Data_unf_JERsysdown") 
+			   (TH1D*)JERsysfile->Get("Data_unf_JERsysdown") 
 			   )->Clone( 
 				    ("Data_unf_JERsysdown_ybin"+std::to_string(i)).c_str() 
 				     )
 			  );
     
-    
+    cout<<"hello world!"<<endl;
     
     ratios[i]=(TH1D*) spectra[i]->Clone(("Data_MC_ratio_ybin"+std::to_string(i)).c_str());
     ratios[i]->Divide(mcspectra[i]);
@@ -236,14 +237,14 @@ void  makeSMPInclJetXsec_PY8unfdata_ratios (std::string outdir, TFile* fout){
     ratios[i]->SetLineColor(kBlack);    
     ratios[i]->SetMinimum(0.4);    ratios[i]->SetMaximum(1.6);
     setRatioHistLabels((TH1D*)ratios[i], "Ratio to PYTHIA8");
-
+cout<<"DATA STAT"<<endl;
     //DATA STAT UNC
     ratios_statunc[i]=(TH1D*) spectra[i]->Clone(("Data_MC_StatUnc_ratio_ybin"+std::to_string(i)).c_str());
     ratios_statunc[i]->Divide(mcspectra[i]);
     ratios_statunc[i]->SetMarkerSize(0);  ratios_statunc[i]->SetMarkerColor(kBlack);   ratios_statunc[i]->SetMarkerStyle(kFullCircle);
     ratios_statunc[i]->SetLineColor(kGray+2);    
     
-
+cout<<"JEC SYS"<<endl;
     //JEC SYS
     ratios_JECup[i]=(TH1D*) spectra_JECup[i]->Clone(("Data_unf_JECsysup_MC_ratio_ybin"+std::to_string(i)).c_str());
     ratios_JECup[i]->Divide(mcspectra[i]);
@@ -254,7 +255,7 @@ void  makeSMPInclJetXsec_PY8unfdata_ratios (std::string outdir, TFile* fout){
     ratios_JECdown[i]->Divide(mcspectra[i]);
     ratios_JECdown[i]->SetMarkerSize(0);  ratios_JECdown[i]->SetMarkerColor(kBlack);   ratios_JECdown[i]->SetMarkerStyle(kFullCircle);
     ratios_JECdown[i]->SetLineColor(kRed);        ratios_JECdown[i]->SetLineWidth(1);    
-
+cout<<"JER SYS"<<endl;
     //JER SYS
     ratios_JERup[i]=(TH1D*) spectra_JERup[i]->Clone(("Data_unf_JERsysup_MC_ratio_ybin"+std::to_string(i)).c_str());
     ratios_JERup[i]->Divide(mcspectra[i]);
@@ -266,7 +267,7 @@ void  makeSMPInclJetXsec_PY8unfdata_ratios (std::string outdir, TFile* fout){
     ratios_JERdown[i]->SetMarkerSize(0);  ratios_JERdown[i]->SetMarkerColor(kBlack);   ratios_JERdown[i]->SetMarkerStyle(kFullCircle);
     ratios_JERdown[i]->SetLineColor(kGreen);        ratios_JERdown[i]->SetLineWidth(1);    
 
-
+cout<<"TOTAL UNC"<<endl;
     //TOTAL UNC, ALL UNC
     ratios_totaluncup[i]=(TH1D*)ratios[i]->Clone(("Data_MC_totaluncup_ratio_ybin"+std::to_string(i)).c_str());
     ratios_totaluncup[i]->Reset("MICES");
@@ -437,7 +438,7 @@ void  makeSMPInclJetXsec_PY8unfdatasysterr_ratios (std::string outdir, TFile* fo
     
     spectra_JECup[i] =  (TH1D*)(
 				(
-				 (TH1D*)file->Get("JECsys/Data_unf_JECsysup") 
+				 (TH1D*)file->Get("Data_unf_JECsysup") 
 				 )->Clone( 
 					  ("Data_unf_JECsysup_ybin"+std::to_string(i)).c_str() 
 					   )
@@ -445,12 +446,12 @@ void  makeSMPInclJetXsec_PY8unfdatasysterr_ratios (std::string outdir, TFile* fo
     
     spectra_JECdown[i] =  (TH1D*)(
 				  (
-				   (TH1D*)file->Get("JECsys/Data_unf_JECsysdown") 
+				   (TH1D*)file->Get("Data_unf_JECsysdown") 
 				   )->Clone( 
 					    ("Data_unf_JECsysdown_ybin"+std::to_string(i)).c_str() 
 					     )
 				  );
-    std::string JERsysfilepath= PY8_UNFDIR_DATA + PY8_UNFDIR_DATA_SYST_file_array[1] +YBIN_TAG_array[i]+ ".root";//also has JEC systematics
+    std::string JERsysfilepath= PY8_UNFDIR_DATA + PY8_UNFDIR_DATA_SYST_file_array[1] +ETABIN_TAG_array[i]+ ".root";//also has JEC systematics
     TFile* JERsysfile=TFile::Open((JERsysfilepath).c_str(),"READ");
     
     
@@ -705,14 +706,14 @@ void  makeSMPInclJetXsec_PY8unfdata_wdatameas (std::string outdir, TFile* fout){
 
 
   TLegend* leg=makeLegend();
-  leg->SetHeader( "RECO PY8 Unfolded Data   ","C" );
+  leg->SetHeader( "RECO PY8 Unfolded Data   ");
   
   TPaveText* jetdesc=makePaveText(.64,.81,.87,.88);
   jetdesc->AddText(ptrange.c_str());
   jetdesc->AddText(jettype.c_str());
   
   TLegend* dataleg=makeLegend(0.64, 0.60, 0.90, 0.80);
-  dataleg->SetHeader("Measured Data         ", "C");
+  dataleg->SetHeader("Measured Data         ");
   
   
   TCanvas* canv=makeSMPSpectraCanvas("PY8unfdata_SMPInclJetXsec_wdatameas");
@@ -800,7 +801,7 @@ void  makeSMPInclJetXsec_PY8unfdata_wdatameas_ratios (std::string outdir, TFile*
 			    );        
 
 
-    std::string JERsysfilepath= PY8_UNFDIR_DATA + PY8_UNFDIR_DATA_SYST_file_array[1] +YBIN_TAG_array[i]+ ".root";//also has JEC systematics
+    std::string JERsysfilepath= PY8_UNFDIR_DATA + PY8_UNFDIR_DATA_SYST_file_array[1] +ETABIN_TAG_array[i]+ ".root";//also has JEC systematics
     TFile* JERsysfile=TFile::Open((JERsysfilepath).c_str(),"READ");
 
 

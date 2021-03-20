@@ -43,7 +43,7 @@ const std::string orders[2]={"NLO","NNLO"};
 
 const std::string outdir="final_plots/";
 const bool writeToFile=false;
-const bool printFileBaseToScreen=true;
+const bool printFileBaseToScreen=false;
 
 const bool doDataPlots=false;
 const bool doPY8Plots=false;

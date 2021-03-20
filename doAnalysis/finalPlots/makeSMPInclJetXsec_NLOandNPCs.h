@@ -415,7 +415,7 @@ void  makeSMPInclJetXsec_NLOsyst_targPDF_ratios (std::string outdir, TFile* fout
     
     if(i==1){
       TLegend* leg=makeLegend(0.55, 0.63, 0.88, 0.87);
-      leg->SetHeader((targPDF_nous+" "+order).c_str(),"");
+      leg->SetHeader((targPDF_nous+" "+order).c_str());
       leg->AddEntry(ratios_statunc[i],"Stat Unc.","le");
       leg->AddEntry(ratios_PDFup[i]  ,"PDF Unc.","l");
       leg->AddEntry(ratios_MUup[i]  ,"6P Scale Unc.","l");
@@ -544,7 +544,7 @@ void  makeSMPInclJetXsec_NPCs_onePadAllEta (std::string outdir, TFile* fout, std
 
   //first hist to be drawn, so this gets the max/min/labels/titles set up
   TLegend* leg=makeLegend(0.12, 0.63, 0.4, 0.88);
-  leg->SetHeader( (NPC_str+" NPC Fits (R=0.4)").c_str(),"" );
+  leg->SetHeader( (NPC_str+" NPC Fits (R=0.4)").c_str());
   
   TCanvas* canv=makeSMPSpectraCanvas(NPC_str+"_NPCs_onePadAllEta");
   canv->SetLogy(0);
@@ -735,7 +735,7 @@ void  makeSMPInclJetXsec_NPCs_onePadOneEta (std::string outdir, TFile* fout, std
   for(int i=0; i<netabins; i++){
 
     TLegend* leg=makeLegend(.15,.65,.6,.9);
-    leg->SetHeader( (NPC_str+" NPCs (R=0.4)").c_str(),"" );    
+    leg->SetHeader( (NPC_str+" NPCs (R=0.4)").c_str());    
     if(NPC_str!="AVG")leg->AddEntry(NPCdata_forDraw[i],"Data Points", "lpe");
     leg->AddEntry(NPCfit[i],"Fit", "l");
     leg->AddEntry(NPCfit_sysup[i],"Fit Unc.", "l");

@@ -24,12 +24,12 @@ const int YBIN_TAG_Nstrs=sizeof(YBIN_TAG_array)/sizeof(std::string);
 //DATA, NOTE: JEC/KITER SYSTEMATICS IN THESE FILES
 //ak3PFJets_wjtID_anabins_Bayes_PY8_FullRECO_07.11.19_SMPbins_etabin_3_LOMC_00eta05.pdf
 const std::string PY8_UNFDIR_DATA   ="PY8unf/data/"; 
-const std::string PY8_UNF_DATA_file_base="ak3PFJets_wjtID_anabins_Bayes_PY8_FullRECO_07.11.19_SMPbins_etabin_3_";
+const std::string PY8_UNF_DATA_file_base="ak3PFJets_wjtID_anabins_Bayes_PY8_FullRECO_07.11.19_SMPbins_withJECsys_LOMC_";
 const std::string PY8_UNFDIR_DATA_file_array[]={
-  PY8_UNF_DATA_file_base+"LOMC_00eta05",
-  PY8_UNF_DATA_file_base+"LOMC_05eta10",
-  PY8_UNF_DATA_file_base+"LOMC_10eta15",
-  PY8_UNF_DATA_file_base+"LOMC_15eta20" 
+  PY8_UNF_DATA_file_base+"00eta05",
+  PY8_UNF_DATA_file_base+"05eta10",
+  PY8_UNF_DATA_file_base+"10eta15",
+  PY8_UNF_DATA_file_base+"15eta20" 
 };
 const std::string PY8_UNFDIR_DATA_shortdir_array[]={
   "YBIN0",
@@ -61,8 +61,8 @@ const int PY8_UNFDIR_CLOSURE_Nfiles=sizeof( PY8_UNFDIR_CLOSURE_file_array )/size
 //SYSTEMATICS
 const std::string PY8_UNF_DATA_SYST_file_base=PY8_UNF_DATA_file_base;	//This should be OK
 const std::string PY8_UNFDIR_DATA_SYST_file_array[]={ 
-  PY8_UNF_DATA_SYST_file_base+"JECsys_LOMC_",
-  PY8_UNF_DATA_SYST_file_base+"JERsys_LOMC_"
+  PY8_UNF_DATA_SYST_file_base,
+  PY8_UNF_DATA_SYST_file_base
 };
 const int   PY8_UNFDIR_DATA_SYST_Nfiles=(sizeof(   PY8_UNFDIR_DATA_SYST_file_array )/sizeof(std::string))*(ETABIN_TAG_Nstrs);//MULTIPLY BY # OF ETABINS
 

@@ -275,7 +275,7 @@ void  makeSMPInclJetXsec_fracstaterrData_ratios (std::string outdir, TFile* fout
    
     if(i==0){
       TLegend* leg=makeLegend(0.56, 0.68, 0.87, 0.87);
-      leg->SetHeader("Merged SMP Inclusive Jet Bins","");
+      leg->SetHeader("Merged SMP Inclusive Jet Bins");
       leg->AddEntry(ratios_fracstatunc[i],"Fractional Stat. Unc.","l");
       leg->AddEntry(one, "50% Unc.","l");
       leg->Draw();

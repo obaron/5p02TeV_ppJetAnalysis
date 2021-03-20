@@ -100,7 +100,7 @@ void  makeSMPInclJetXsec_NLOunfdata (std::string outdir, TFile* fout){
 
 
   TLegend* leg=makeLegend();
-  leg->SetHeader( "NLO #otimes NP Unfolded Data   ","C" );
+  leg->SetHeader( "NLO #otimes NP Unfolded Data   ");
   
   TLegend* mcleg=makeLegend(0.52, 0.72, 0.88, 0.84);
   //mcleg->SetHeader( jettype.c_str(),"C" );
@@ -1537,14 +1537,14 @@ void  makeSMPInclJetXsec_NLOunfdata_wdatameas (std::string outdir, TFile* fout){
   std::string ptrange=ptcuts_lo+std::to_string( (int)xhi)+" GeV";  
   
   TLegend* leg=makeLegend();
-  leg->SetHeader( "NLO #otimes NP Unfolded Data   ","C" );
+  leg->SetHeader( "NLO #otimes NP Unfolded Data   ");
   
   TPaveText* jetdesc=makePaveText(.64,.81,.87,.88);
   jetdesc->AddText(ptrange.c_str());
   jetdesc->AddText(jettype.c_str());
   
   TLegend* dataleg=makeLegend(0.64, 0.60, 0.90, 0.80);
-  dataleg->SetHeader("Measured Data         ", "C");
+  dataleg->SetHeader("Measured Data         ");
   
   TCanvas* canv=makeSMPSpectraCanvas("NLOunfdata_SMPInclJetXsec_wdatameas");
   canv->cd();
