@@ -474,7 +474,7 @@ int readForests_ppMC_JERS(std::string inFilelist , int startfile , int endfile ,
       else if ( !(genpt < genJetPtCut_Hi) ) continue;   //high genpt cut
       else if ( absreceta < jtEtaCutLo ) continue; // lower abseta cut 
       else if (!(absreceta < jtEtaCutHi))continue; // higher abseta cut
-      else if ( gendrjt > 0.1 ) continue;       //delta-r cut, proxy for gen-reco matching quality
+      else if ( gendrjt > 99 ) continue;       //delta-r cut, proxy for gen-reco matching quality
       
       
       // jet/event counts

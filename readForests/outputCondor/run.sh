@@ -6,15 +6,15 @@ echo ""
 
 #localDir=/Users/ilaflott/Working/Dropbox/localAnalysis/src/5p02TeV_ppJetAnalysis-master/doAnalysis/printPlots/outputCondor
 
-MM="07"
-DD="12"
-YY="19"
+MM="03"
+DD="22"
+YY="21"
 
 
 #source renameNhadd.sh 3 "${MM}-${DD}-${YY}" "${MM}.${DD}.${YY}" "jetPlots_0.0eta2.0" "ppMC" "semifinal_doublecheck"
-source renameNhadd.sh 3 "${MM}-${DD}-${YY}" "${MM}.${DD}.${YY}" "JERS_0.0eta2.0" "ppMC" "JERSplots"
+#source renameNhadd.sh 3 "${MM}-${DD}-${YY}" "${MM}.${DD}.${YY}" "JERS_0.0eta2.0" "ppMC" "JERSplots"
 #source renameNhadd.sh 3 "${MM}-${DD}-${YY}" "${MM}.${DD}.${YY}" "jetPlots_0.0eta2.0" "ppMC"
-
+source renameNhadd.sh 3 "${MM}-${DD}-${YY}" "${MM}.${DD}.${YY}" "unf_0.0eta2.0"      "ppMC" "unfold"
 
 
 ####source renameNhadd.sh 3 "${MM}-${DD}-${YY}" "${MM}.${DD}.${YY}" "jetPlots_0.0eta2.0" "ppData" "JohnSbins"

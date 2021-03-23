@@ -25,9 +25,9 @@ int readForests_ppMC_unf( std::string inFilelist=defMCInFilelist,
 			   float jtEtaCutLo=0., float jtEtaCutHi=2.0      );
 
 ////UNF CUTS: DO NOT CHANGE FOR NOW (6/25/19)
-const float jtPtCut        = 28.;
+const float jtPtCut        = 43.;
 const float jtPtCut_Hi     = 1410.;
-const float genJetPtCut    = 28.;
+const float genJetPtCut    = 43.;
 const float genJetPtCut_Hi = 1410.;
 
 // Apr 29th 2016

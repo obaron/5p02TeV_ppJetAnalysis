@@ -104,16 +104,16 @@ echo ""
 # source run_printPlots_ppMC_JERS_etabin.sh "3" "07.12.19_outputCondor" "07-12-19" "0.0eta2.0_JERSplots" "15eta20_07.12.19_sigmu" "1" "0" "3" "sigmu" 
 
 ### New MC (2020)
-source run_printPlots_ppMC_JERS_etabin.sh "3" "09.30.20_outputCondor" "09-30-20" "0.0eta2.0_JERSplots" "00eta05_09.30.20_sigma" "1" "0" "0" "sigma" 
-source run_printPlots_ppMC_JERS_etabin.sh "3" "09.30.20_outputCondor" "09-30-20" "0.0eta2.0_JERSplots" "05eta10_09.30.20_sigma" "1" "0" "1" "sigma" 
-source run_printPlots_ppMC_JERS_etabin.sh "3" "09.30.20_outputCondor" "09-30-20" "0.0eta2.0_JERSplots" "10eta15_09.30.20_sigma" "1" "0" "2" "sigma" 
-source run_printPlots_ppMC_JERS_etabin.sh "3" "09.30.20_outputCondor" "09-30-20" "0.0eta2.0_JERSplots" "15eta20_09.30.20_sigma" "1" "0" "3" "sigma" 
+source run_printPlots_ppMC_JERS_etabin.sh "3" "03.22.21_outputCondor" "03-22-21" "0.0eta2.0_JERSplots" "00eta05_03.22.21_sigma" "1" "0" "0" "sigma" 
+source run_printPlots_ppMC_JERS_etabin.sh "3" "03.22.21_outputCondor" "03-22-21" "0.0eta2.0_JERSplots" "05eta10_03.22.21_sigma" "1" "0" "1" "sigma" 
+source run_printPlots_ppMC_JERS_etabin.sh "3" "03.22.21_outputCondor" "03-22-21" "0.0eta2.0_JERSplots" "10eta15_03.22.21_sigma" "1" "0" "2" "sigma" 
+source run_printPlots_ppMC_JERS_etabin.sh "3" "03.22.21_outputCondor" "03-22-21" "0.0eta2.0_JERSplots" "15eta20_03.22.21_sigma" "1" "0" "3" "sigma" 
 
 
-source run_printPlots_ppMC_JERS_etabin.sh "3" "09.30.20_outputCondor" "09-30-20" "0.0eta2.0_JERSplots" "00eta05_09.30.20_sigmu" "1" "0" "0" "sigmu" 
-source run_printPlots_ppMC_JERS_etabin.sh "3" "09.30.20_outputCondor" "09-30-20" "0.0eta2.0_JERSplots" "05eta10_09.30.20_sigmu" "1" "0" "1" "sigmu" 
-source run_printPlots_ppMC_JERS_etabin.sh "3" "09.30.20_outputCondor" "09-30-20" "0.0eta2.0_JERSplots" "10eta15_09.30.20_sigmu" "1" "0" "2" "sigmu" 
-source run_printPlots_ppMC_JERS_etabin.sh "3" "09.30.20_outputCondor" "09-30-20" "0.0eta2.0_JERSplots" "15eta20_09.30.20_sigmu" "1" "0" "3" "sigmu" 
+source run_printPlots_ppMC_JERS_etabin.sh "3" "03.22.21_outputCondor" "03-22-21" "0.0eta2.0_JERSplots" "00eta05_03.22.21_sigmu" "1" "0" "0" "sigmu" 
+source run_printPlots_ppMC_JERS_etabin.sh "3" "03.22.21_outputCondor" "03-22-21" "0.0eta2.0_JERSplots" "05eta10_03.22.21_sigmu" "1" "0" "1" "sigmu" 
+source run_printPlots_ppMC_JERS_etabin.sh "3" "03.22.21_outputCondor" "03-22-21" "0.0eta2.0_JERSplots" "10eta15_03.22.21_sigmu" "1" "0" "2" "sigmu" 
+source run_printPlots_ppMC_JERS_etabin.sh "3" "03.22.21_outputCondor" "03-22-21" "0.0eta2.0_JERSplots" "15eta20_03.22.21_sigmu" "1" "0" "3" "sigmu" 
 
 #echo "scp2Serin"																             
 #scp2Serin "output/ak4PF_PY8JER_??eta??_03.14.19_sigm*.*"										             
