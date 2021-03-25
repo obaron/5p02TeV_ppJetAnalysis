@@ -43,7 +43,7 @@ const int PY8_UNFDIR_DATA_Nfiles=sizeof( PY8_UNFDIR_DATA_file_array )/sizeof(std
 const std::string PY8_UNFDIR_CLOSURE="PY8unf/closure/";
 
 //ak3PFJets_wjtID_anabins_Bayes_Closure_PY8_FullRECO_09.30.20_SMPbins_LOMC_05eta10.root
-const std::string PY8_UNF_CLOSURE_file_base="ak3PFJets_wjtID_anabins_Bayes_Closure_PY8_FullRECO_09.30.20_SMPbins_LOMC_";
+const std::string PY8_UNF_CLOSURE_file_base="ak3PFJets_wjtID_anabins_Bayes_Closure_PY8_FullRECO_03.22.21_SMPbins_LOMC_";
 const std::string PY8_UNFDIR_CLOSURE_file_array[]={
   PY8_UNF_CLOSURE_file_base+"00eta05",
   PY8_UNF_CLOSURE_file_base+"05eta10",
@@ -127,10 +127,10 @@ const int   NLO_UNFDIR_DATA_SYST_Nfiles=(sizeof(   NLO_UNFDIR_DATA_SYST_file_arr
 // ------------------------------------------------------------------------------- //
 const std::string JERDIR_MC  ="JER/";
 const std::string JERDIR_MC_file_array[]={ 
-  "ak3PF_PY8JER_00eta05_09.30.20_sigmu",
-  "ak3PF_PY8JER_05eta10_09.30.20_sigmu",
-  "ak3PF_PY8JER_10eta15_09.30.20_sigmu",
-  "ak3PF_PY8JER_15eta20_09.30.20_sigmu"
+  "ak3PF_PY8JER_00eta05_003.22.21_sigmu",
+  "ak3PF_PY8JER_05eta10_003.22.21_sigmu",
+  "ak3PF_PY8JER_10eta15_003.22.21_sigmu",
+  "ak3PF_PY8JER_15eta20_003.22.21_sigmu"
 };
 const std::string JERDIR_MC_shortdir_array[]={ 
   "YBIN0",
