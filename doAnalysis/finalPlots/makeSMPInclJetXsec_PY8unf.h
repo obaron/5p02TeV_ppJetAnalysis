@@ -208,6 +208,8 @@ cout<<"3"<<endl;
 				     )
 			  );
 cout<<"4"<<endl;
+
+if(doJERsys){
     std::string JERsysfilepath= PY8_UNFDIR_DATA + PY8_UNFDIR_DATA_SYST_file_array[1] +ETABIN_TAG_array[i]+ ".root";//also has JEC systematics
     TFile* JERsysfile=TFile::Open((JERsysfilepath).c_str(),"READ");
 	cout<<"JERsysfile = "<<JERsysfilepath<<endl;
@@ -226,8 +228,10 @@ cout<<"5"<<endl;
 				    ("Data_unf_JERsysdown_ybin"+std::to_string(i)).c_str() 
 				     )
 			  );
+			  cout<<"JERsys Run"<<endl;
+}
+
     
-    cout<<"hello world!"<<endl;
     
     ratios[i]=(TH1D*) spectra[i]->Clone(("Data_MC_ratio_ybin"+std::to_string(i)).c_str());
     ratios[i]->Divide(mcspectra[i]);
@@ -255,6 +259,8 @@ cout<<"JEC SYS"<<endl;
     ratios_JECdown[i]->Divide(mcspectra[i]);
     ratios_JECdown[i]->SetMarkerSize(0);  ratios_JECdown[i]->SetMarkerColor(kBlack);   ratios_JECdown[i]->SetMarkerStyle(kFullCircle);
     ratios_JECdown[i]->SetLineColor(kRed);        ratios_JECdown[i]->SetLineWidth(1);    
+
+id(doJERsys){
 cout<<"JER SYS"<<endl;
     //JER SYS
     ratios_JERup[i]=(TH1D*) spectra_JERup[i]->Clone(("Data_unf_JERsysup_MC_ratio_ybin"+std::to_string(i)).c_str());
@@ -266,6 +272,7 @@ cout<<"JER SYS"<<endl;
     ratios_JERdown[i]->Divide(mcspectra[i]);
     ratios_JERdown[i]->SetMarkerSize(0);  ratios_JERdown[i]->SetMarkerColor(kBlack);   ratios_JERdown[i]->SetMarkerStyle(kFullCircle);
     ratios_JERdown[i]->SetLineColor(kGreen);        ratios_JERdown[i]->SetLineWidth(1);    
+}
 
 cout<<"TOTAL UNC"<<endl;
     //TOTAL UNC, ALL UNC
@@ -274,7 +281,7 @@ cout<<"TOTAL UNC"<<endl;
     std::cout<<"making data/MC total upper uncertainty for all sources"<<std::endl;
     makeTotSystUncRatio("up", ratios[i] , ratios_statunc[i],
 			( (std::vector<TH1*>)
-			{ ratios_JERdown[i], ratios_JECup[i]
+	//		{ ratios_JERdown[i], ratios_JECup[i]
 			    }
 			  ),
 			ratios_totaluncup[i]);
@@ -288,7 +295,7 @@ cout<<"TOTAL UNC"<<endl;
     std::cout<<"making data/MC total lower uncertainty for all sources"<<std::endl;
     makeTotSystUncRatio("down", ratios[i] , ratios_statunc[i],
 			( (std::vector<TH1*>)
-			{ ratios_JERup[i], ratios_JECdown[i]
+	//		{ ratios_JERup[i], ratios_JECdown[i]
 			    }
 			  ),
 			ratios_totaluncdown[i]);
@@ -326,8 +333,12 @@ cout<<"TOTAL UNC"<<endl;
     ratios_statunc[i]->Draw("HIST E ][ SAME");    
     ratios_JECup[i]->Draw("HIST ][ SAME");    
     ratios_JECdown[i]->Draw("HIST ][ SAME");    
-    ratios_JERup[i]->Draw("HIST ][ SAME");    
+
+if(doJERsys){ 
+	ratios_JERup[i]->Draw("HIST ][ SAME");    
     ratios_JERdown[i]->Draw("HIST ][ SAME");    
+	}
+	
     ratios_totaluncup[i]->Draw("HIST ][ SAME");
     ratios_totaluncdown[i]->Draw("HIST ][ SAME");
     lumisysterr->Draw("HIST  E2  ][ SAME");
@@ -342,7 +353,11 @@ cout<<"TOTAL UNC"<<endl;
       leg->AddEntry(ratios[i],"PY8 Unfolded Data","lp");
       leg->AddEntry(ratios_statunc[i],"Data #oplus MC Stat. Unc.","le");
       leg->AddEntry(ratios_JECup[i],"JEC Syst. Unc.","l");
-      leg->AddEntry(ratios_JERup[i],"JER Syst. Unc.","l");
+	  
+if(doJERsys){     
+	 leg->AddEntry(ratios_JERup[i],"JER Syst. Unc.","l");
+}
+
       leg->AddEntry(ratios_totaluncup[i],"Stat #oplus Syst. Unc.","l");
       leg->AddEntry(lumisysterr,"Lumi. Unc., #pm 2.3%","lepf");
       leg->Draw();
@@ -376,9 +391,11 @@ cout<<"TOTAL UNC"<<endl;
     
     ratios[i]->Delete();
     ratios_statunc[i]->Delete();
-    ratios_JERup[i]  ->Delete();
+if(doJERsys){    
+	ratios_JERup[i]  ->Delete();
     ratios_JERdown[i]->Delete();
-    ratios_JECup[i]  ->Delete();
+}
+	ratios_JECup[i]  ->Delete();
     ratios_JECdown[i]->Delete();
     ratios_totaluncup[i]  ->Delete();
     ratios_totaluncdown[i]->Delete();
@@ -411,15 +428,21 @@ void  makeSMPInclJetXsec_PY8unfdatasysterr_ratios (std::string outdir, TFile* fo
   TH1D* spectra[netabins]={};
   TH1D* spectra_JECup[netabins]={};
   TH1D* spectra_JECdown[netabins]={};
+
+if(doJERsys){  
   TH1D* spectra_JERup[netabins]={};
   TH1D* spectra_JERdown[netabins]={};
+  TH1D* ratios_JERup[netabins]={};
+  TH1D* ratios_JERdown[netabins]={};
+}
 
   TH1D* ratios[netabins]={};
   TH1D* ratios_statunc[netabins]={};
   TH1D* ratios_JECup[netabins]={};
   TH1D* ratios_JECdown[netabins]={};
-  TH1D* ratios_JERup[netabins]={};
-  TH1D* ratios_JERdown[netabins]={};
+  
+  
+  
   TH1D* ratios_totaluncUP[netabins]={};
   TH1D* ratios_totaluncDOWN[netabins]={};
   
@@ -451,6 +474,7 @@ void  makeSMPInclJetXsec_PY8unfdatasysterr_ratios (std::string outdir, TFile* fo
 					    ("Data_unf_JECsysdown_ybin"+std::to_string(i)).c_str() 
 					     )
 				  );
+if(doJERsys){
     std::string JERsysfilepath= PY8_UNFDIR_DATA + PY8_UNFDIR_DATA_SYST_file_array[1] +ETABIN_TAG_array[i]+ ".root";//also has JEC systematics
     TFile* JERsysfile=TFile::Open((JERsysfilepath).c_str(),"READ");
     
@@ -470,7 +494,8 @@ void  makeSMPInclJetXsec_PY8unfdatasysterr_ratios (std::string outdir, TFile* fo
 					    ("Data_unf_JERsysdown_ybin"+std::to_string(i)).c_str() 
 					     )
 				  );
-    
+}
+
     ratios[i]=(TH1D*) spectra[i]->Clone(("Data_ratio_ybin"+std::to_string(i)).c_str());
     ratios[i]->Divide(spectra[i]);
     for(int j=1; j<=ratios[i]->GetNbinsX();j++)
@@ -499,6 +524,7 @@ void  makeSMPInclJetXsec_PY8unfdatasysterr_ratios (std::string outdir, TFile* fo
     ratios_JECdown[i]->SetMarkerSize(0);  ratios_JECdown[i]->SetMarkerColor(kBlack);   ratios_JECdown[i]->SetMarkerStyle(kFullCircle);
     ratios_JECdown[i]->SetLineColor(kRed);        ratios_JECdown[i]->SetLineWidth(1);    
 
+if(doJERsys){
     ratios_JERup[i]=(TH1D*) spectra_JERup[i]->Clone(("Data_unf_JERsysup_ratio_ybin"+std::to_string(i)).c_str());
     ratios_JERup[i]->Divide(spectra[i]);
     ratios_JERup[i]->SetMarkerSize(0);  ratios_JERup[i]->SetMarkerColor(kBlack);   ratios_JERup[i]->SetMarkerStyle(kFullCircle);
@@ -508,7 +534,8 @@ void  makeSMPInclJetXsec_PY8unfdatasysterr_ratios (std::string outdir, TFile* fo
     ratios_JERdown[i]->Divide(spectra[i]);
     ratios_JERdown[i]->SetMarkerSize(0);  ratios_JERdown[i]->SetMarkerColor(kBlack);   ratios_JERdown[i]->SetMarkerStyle(kFullCircle);
     ratios_JERdown[i]->SetLineColor(kGreen);        ratios_JERdown[i]->SetLineWidth(1);    
-    
+
+
     ////TOTAL UNC (STAT + SYST)
     ratios_totaluncUP[i]=(TH1D*) ratios_statunc[i]->Clone(("Data_totalUncUP_ratio_ybin"+std::to_string(i)).c_str());
     ratios_totaluncUP[i]->Reset("MICES");
@@ -529,6 +556,30 @@ void  makeSMPInclJetXsec_PY8unfdatasysterr_ratios (std::string outdir, TFile* fo
 		       ratios_totaluncDOWN[i]);
   }
   
+ else( 
+  
+      ////TOTAL UNC (STAT + SYST)
+    ratios_totaluncUP[i]=(TH1D*) ratios_statunc[i]->Clone(("Data_totalUncUP_ratio_ybin"+std::to_string(i)).c_str());
+    ratios_totaluncUP[i]->Reset("MICES");
+    ratios_totaluncUP[i]->SetMarkerSize(0);  ratios_totaluncUP[i]->SetMarkerColor(kBlack);   ratios_totaluncUP[i]->SetMarkerStyle(kFullCircle);
+    ratios_totaluncUP[i]->SetLineColor(kBlack);    ratios_totaluncUP[i]->SetLineWidth(1);    
+    makeTotRelSystUncRatio("up",
+		       ratios_statunc[i],
+		       ((std::vector<TH1*>){ratios_JECup[i],ratios_statunc[i]}) ,
+		       ratios_totaluncUP[i]);
+
+    ratios_totaluncDOWN[i]=(TH1D*) ratios_statunc[i]->Clone(("Data_totalUncDOWN_ratio_ybin"+std::to_string(i)).c_str());
+    ratios_totaluncDOWN[i]->Reset("MICES");
+    ratios_totaluncDOWN[i]->SetMarkerSize(0);  ratios_totaluncDOWN[i]->SetMarkerColor(kBlack);   ratios_totaluncDOWN[i]->SetMarkerStyle(kFullCircle);
+    ratios_totaluncDOWN[i]->SetLineColor(kBlack);    ratios_totaluncDOWN[i]->SetLineWidth(1);    
+    makeTotRelSystUncRatio("down",
+		       ratios_statunc[i],
+		       ((std::vector<TH1*>){ratios_JECdown[i],ratios_statunc[i]}) ,
+		       ratios_totaluncDOWN[i]);
+  }
+  
+  
+}
   
   
   //this works fine because first pt bin of all the ratios are the same
@@ -558,9 +609,11 @@ void  makeSMPInclJetXsec_PY8unfdatasysterr_ratios (std::string outdir, TFile* fo
     ratios_statunc[i]->Draw("HIST E ][ SAME");    
     ratios_JECup[i]->Draw("HIST ][ SAME");    
     ratios_JECdown[i]->Draw("HIST ][ SAME");    
-    ratios_JERup[i]->Draw("HIST ][ SAME");    
+if(doJERsys){    
+	ratios_JERup[i]->Draw("HIST ][ SAME");    
     ratios_JERdown[i]->Draw("HIST ][ SAME");    
-    ratios_totaluncUP[i]->Draw("HIST ][ SAME");    
+}
+	ratios_totaluncUP[i]->Draw("HIST ][ SAME");    
     ratios_totaluncDOWN[i]->Draw("HIST ][ SAME");    
     lumisysterr->Draw("HIST  E2  ][ SAME");
     ratios[i]->Draw("HIST E ][ SAME");    
@@ -574,7 +627,7 @@ void  makeSMPInclJetXsec_PY8unfdatasysterr_ratios (std::string outdir, TFile* fo
       //leg->AddEntry(ratios[i],"PY8 Unfolded Data","lp");
       leg->AddEntry(ratios_statunc[i],"Data Stat. Unc.","le");
       leg->AddEntry(ratios_JECup[i],"JEC Syst. Unc.","l");
-      leg->AddEntry(ratios_JERup[i],"JER Syst. Unc.","l");
+if(doJERsys){      leg->AddEntry(ratios_JERup[i],"JER Syst. Unc.","l"); }
       leg->AddEntry(ratios_totaluncUP[i],"Stat. #oplus Syst. Unc.","l");
       leg->AddEntry(lumisysterr,"Lumi. Unc., #pm 2.3%","lepf");
       leg->Draw();
@@ -600,16 +653,20 @@ void  makeSMPInclJetXsec_PY8unfdatasysterr_ratios (std::string outdir, TFile* fo
   for(int i=0; i<netabins;i++){
     
     spectra[i]->Delete();
+if(doJERsys){
     spectra_JERup[i]  ->Delete();
     spectra_JERdown[i]->Delete();
+}	
     spectra_JECup[i]  ->Delete();
     spectra_JECdown[i]->Delete();
     
     ratios[i]->Delete();
     ratios_statunc[i]->Delete();
-    ratios_JERup[i]  ->Delete();
+if(doJERsys){    
+	ratios_JERup[i]  ->Delete();
     ratios_JERdown[i]->Delete();
-    ratios_JECup[i]  ->Delete();
+}
+	ratios_JECup[i]  ->Delete();
     ratios_JECdown[i]->Delete();
     ratios_totaluncUP[i]->Delete();
     ratios_totaluncDOWN[i]->Delete();
@@ -770,14 +827,16 @@ void  makeSMPInclJetXsec_PY8unfdata_wdatameas_ratios (std::string outdir, TFile*
   TH1D* measspectra[netabins]={};
 
   TH1D* spectra[netabins]={};
-  TH1D* spectra_JERup[netabins]={};
+if(doJERsys){ 
+ TH1D* spectra_JERup[netabins]={};
   TH1D* spectra_JERdown[netabins]={};  
-  
+}
   TH1D* ratios[netabins]={};
   TH1D* ratios_statunc[netabins]={};
+  if(doJERsys){
   TH1D* ratios_JERup[netabins]={};
   TH1D* ratios_JERdown[netabins]={};
-
+}
   
   //first get the plots, clone + divide accordingly. binning should be set for me already, essentially
   for(int i=0; i<netabins; i++){
@@ -800,7 +859,7 @@ void  makeSMPInclJetXsec_PY8unfdata_wdatameas_ratios (std::string outdir, TFile*
 				       )
 			    );        
 
-
+if(doJERsys){
     std::string JERsysfilepath= PY8_UNFDIR_DATA + PY8_UNFDIR_DATA_SYST_file_array[1] +ETABIN_TAG_array[i]+ ".root";//also has JEC systematics
     TFile* JERsysfile=TFile::Open((JERsysfilepath).c_str(),"READ");
 
@@ -820,7 +879,7 @@ void  makeSMPInclJetXsec_PY8unfdata_wdatameas_ratios (std::string outdir, TFile*
 				    ("Data_unf_JERsysdown_ybin"+std::to_string(i)).c_str() 
 				     )
 			  );
-
+}
     //for(int j=1; j<=measspectra[i]->GetNbinsX();j++)//errors due to PDF will be illustrated by 6 point scale var error. leave inherent PDF errors out of it.
     //measspectra[i]->SetBinError(j,1.e-30);//set this to *almost* 0[else the marker doesnt draw... stupid root]
     
@@ -840,7 +899,7 @@ void  makeSMPInclJetXsec_PY8unfdata_wdatameas_ratios (std::string outdir, TFile*
     ratios_statunc[i]->SetMarkerSize(0);  ratios_statunc[i]->SetMarkerColor(kBlack);   ratios_statunc[i]->SetMarkerStyle(kFullCircle);
     ratios_statunc[i]->SetLineColor(kGray+2);    
 
-
+if(doJERsys){
     //DATA JER UNC
     ratios_JERup[i]=(TH1D*) spectra_JERup[i]->Clone(("Data_Meas_JERsysupUnc_ratio_ybin"+std::to_string(i)).c_str());
     ratios_JERup[i]->Divide(measspectra[i]);    
@@ -851,10 +910,12 @@ void  makeSMPInclJetXsec_PY8unfdata_wdatameas_ratios (std::string outdir, TFile*
     ratios_JERdown[i]->Divide(measspectra[i]);    
     ratios_JERdown[i]->SetMarkerSize(0);  ratios_statunc[i]->SetMarkerColor(kBlack);   ratios_statunc[i]->SetMarkerStyle(kFullCircle);
     ratios_JERdown[i]->SetLineColor(kGreen);    
+}
+	
   }
   
   
-
+if(doJERsys){
   TCanvas* canv=makeSMPRatioCanvas("PY8unfdata_SMPInclJetXsec_wdatameas_ratio");
   
   TPaveText* SMPtitle=makePrelimPaveTextTitleRatio();
@@ -898,6 +959,7 @@ void  makeSMPInclJetXsec_PY8unfdata_wdatameas_ratios (std::string outdir, TFile*
     SMPtitle->Draw();  
     
   }
+
   
   //makeSMPInclJetXsec_PY8unfdata_wdatameas_ratios
   saveCanv(outdir, canv, fout);
@@ -915,7 +977,7 @@ void  makeSMPInclJetXsec_PY8unfdata_wdatameas_ratios (std::string outdir, TFile*
 
   }  
 
-
+}
   
   return;
 }

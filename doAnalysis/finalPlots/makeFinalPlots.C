@@ -50,6 +50,7 @@ const bool doPY8Plots=false;
 const bool doPY8unfPlots=true;
 const bool doThyPlots=false;
 const bool doNLOunfPlots=false;
+const bool doJERsys=false;
 
 void makeFinalPlots(){
   
