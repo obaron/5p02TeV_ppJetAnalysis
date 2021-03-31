@@ -281,7 +281,8 @@ cout<<"TOTAL UNC"<<endl;
     std::cout<<"making data/MC total upper uncertainty for all sources"<<std::endl;
     makeTotSystUncRatio("up", ratios[i] , ratios_statunc[i],
 			( (std::vector<TH1*>)
-	//		{ ratios_JERdown[i], ratios_JECup[i]
+	//		{ ratios_JERdown[i], 
+			ratios_JECup[i]
 	//		    }
 			  ),
 			ratios_totaluncup[i]);
@@ -295,7 +296,8 @@ cout<<"TOTAL UNC"<<endl;
     std::cout<<"making data/MC total lower uncertainty for all sources"<<std::endl;
     makeTotSystUncRatio("down", ratios[i] , ratios_statunc[i],
 			( (std::vector<TH1*>)
-	//		{ ratios_JERup[i], ratios_JECdown[i]
+	//		{ ratios_JERup[i],
+			ratios_JECdown[i]
 	//		    }
 			  ),
 			ratios_totaluncdown[i]);
@@ -418,7 +420,7 @@ if(doJERsys){
 //--------------------------------------------------------------------------------------------------------------------------------
 void  makeSMPInclJetXsec_PY8unfdatasysterr_ratios (std::string outdir, TFile* fout){
   std::cout<<"running makeSMPInclJetXsec_PY8unfdatasysterr_ratios"<<std::endl;
-
+const bool doJERsys=false;
   const int netabins=PY8_UNFDIR_DATA_Nfiles;  
   if(netabins!=n_etabin_strs){
     printetabinerrormessage();
@@ -430,6 +432,7 @@ void  makeSMPInclJetXsec_PY8unfdatasysterr_ratios (std::string outdir, TFile* fo
   TH1D* spectra_JECdown[netabins]={};
 
 if(doJERsys){  
+	cout<<"I'm being naughty and doing JERsys"<<endl;
   TH1D* spectra_JERup[netabins]={};
   TH1D* spectra_JERdown[netabins]={};
   TH1D* ratios_JERup[netabins]={};
