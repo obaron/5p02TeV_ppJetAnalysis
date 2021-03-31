@@ -24,6 +24,8 @@
 #include "TObject.h"
 #include "TMemStatShow.h"
 
+const bool doJERsys=false;
+
 #include "printCanvases_methods.h"
 //#include "file_strings_03.18.20.h"//Y RESULTS W NLO FROM JOAO
 #include "file_strings_01.05.21.h"//Y RESULTS W FULL-STAT NLO FROM KLAUS
@@ -50,7 +52,7 @@ const bool doPY8Plots=false;
 const bool doPY8unfPlots=true;
 const bool doThyPlots=false;
 const bool doNLOunfPlots=false;
-const bool doJERsys=false;
+
 
 void makeFinalPlots(){
   

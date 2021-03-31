@@ -260,7 +260,7 @@ cout<<"JEC SYS"<<endl;
     ratios_JECdown[i]->SetMarkerSize(0);  ratios_JECdown[i]->SetMarkerColor(kBlack);   ratios_JECdown[i]->SetMarkerStyle(kFullCircle);
     ratios_JECdown[i]->SetLineColor(kRed);        ratios_JECdown[i]->SetLineWidth(1);    
 
-id(doJERsys){
+if(doJERsys){
 cout<<"JER SYS"<<endl;
     //JER SYS
     ratios_JERup[i]=(TH1D*) spectra_JERup[i]->Clone(("Data_unf_JERsysup_MC_ratio_ybin"+std::to_string(i)).c_str());
@@ -282,7 +282,7 @@ cout<<"TOTAL UNC"<<endl;
     makeTotSystUncRatio("up", ratios[i] , ratios_statunc[i],
 			( (std::vector<TH1*>)
 	//		{ ratios_JERdown[i], ratios_JECup[i]
-			    }
+	//		    }
 			  ),
 			ratios_totaluncup[i]);
     //return;
@@ -296,7 +296,7 @@ cout<<"TOTAL UNC"<<endl;
     makeTotSystUncRatio("down", ratios[i] , ratios_statunc[i],
 			( (std::vector<TH1*>)
 	//		{ ratios_JERup[i], ratios_JECdown[i]
-			    }
+	//		    }
 			  ),
 			ratios_totaluncdown[i]);
     ratios_totaluncdown[i]->SetMarkerSize(0);  ratios_totaluncdown[i]->SetMarkerColor(kBlack);   ratios_totaluncdown[i]->SetMarkerStyle(kFullCircle);
