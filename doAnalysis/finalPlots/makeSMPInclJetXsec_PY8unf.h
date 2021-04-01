@@ -433,13 +433,12 @@ void  makeSMPInclJetXsec_PY8unfdatasysterr_ratios (std::string outdir, TFile* fo
   TH1D* spectra_JECup[netabins]={};
   TH1D* spectra_JECdown[netabins]={};
 
-if(doJERsys){  
-	cout<<"I'm being naughty and doing JERsys"<<endl;
+
   TH1D* spectra_JERup[netabins]={};
   TH1D* spectra_JERdown[netabins]={};
   TH1D* ratios_JERup[netabins]={};
   TH1D* ratios_JERdown[netabins]={};
-}
+
 
   TH1D* ratios[netabins]={};
   TH1D* ratios_statunc[netabins]={};
@@ -561,7 +560,7 @@ if(doJERsys){
 		       ratios_totaluncDOWN[i]);
   }
   
- else( 
+ else{ 
   
       ////TOTAL UNC (STAT + SYST)
     ratios_totaluncUP[i]=(TH1D*) ratios_statunc[i]->Clone(("Data_totalUncUP_ratio_ybin"+std::to_string(i)).c_str());
@@ -581,7 +580,8 @@ if(doJERsys){
 		       ratios_statunc[i],
 		       ((std::vector<TH1*>){ratios_JECdown[i],ratios_statunc[i]}) ,
 		       ratios_totaluncDOWN[i]);
-  }
+  
+ }
   
   
 }
