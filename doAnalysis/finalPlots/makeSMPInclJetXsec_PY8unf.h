@@ -280,10 +280,10 @@ cout<<"TOTAL UNC"<<endl;
     ratios_totaluncup[i]->Reset("MICES");
     std::cout<<"making data/MC total upper uncertainty for all sources"<<std::endl;
     makeTotSystUncRatio("up", ratios[i] , ratios_statunc[i],
-			( (std::vector<TH1*>)
-	//		{ ratios_JERdown[i], 
+			( (std::vector<TH1*>) {
+	//		 ratios_JERdown[i], 
 			ratios_JECup[i]
-	//		    }
+			    }
 			  ),
 			ratios_totaluncup[i]);
     //return;
@@ -295,10 +295,10 @@ cout<<"TOTAL UNC"<<endl;
     ratios_totaluncdown[i]->Reset("MICES");
     std::cout<<"making data/MC total lower uncertainty for all sources"<<std::endl;
     makeTotSystUncRatio("down", ratios[i] , ratios_statunc[i],
-			( (std::vector<TH1*>)
-	//		{ ratios_JERup[i],
+			( (std::vector<TH1*>) {
+	//		 ratios_JERup[i],
 			ratios_JECdown[i]
-	//		    }
+			    }
 			  ),
 			ratios_totaluncdown[i]);
     ratios_totaluncdown[i]->SetMarkerSize(0);  ratios_totaluncdown[i]->SetMarkerColor(kBlack);   ratios_totaluncdown[i]->SetMarkerStyle(kFullCircle);
