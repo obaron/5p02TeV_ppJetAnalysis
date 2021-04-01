@@ -47,9 +47,9 @@ const std::string outdir="final_plots/";
 const bool writeToFile=false;
 const bool printFileBaseToScreen=false;
 
-const bool doDataPlots=false;
-const bool doPY8Plots=false;
-const bool doPY8unfPlots=true;
+const bool doDataPlots=false; //works
+const bool doPY8Plots=false;  //works
+const bool doPY8unfPlots=true; //debugging currently
 const bool doThyPlots=false;
 const bool doNLOunfPlots=false;
 
@@ -120,16 +120,17 @@ void makeFinalPlots(){
   
   
   //////makeSMPInclJetXsec_PY8unf.h //good
+  //Let's comment these out and debug one by one
   if(doPY8unfPlots){
     //comparisons with thy/GEN/truth distributions
     makeSMPInclJetXsec_PY8unfdata(outdir,fout);
-    makeSMPInclJetXsec_PY8unfdata_ratios(outdir,fout);
-    makeSMPInclJetXsec_PY8unfdatasysterr_ratios(outdir,fout);
+//    makeSMPInclJetXsec_PY8unfdata_ratios(outdir,fout);
+//    makeSMPInclJetXsec_PY8unfdatasysterr_ratios(outdir,fout);
     //comparisons with measured data distributions
-    makeSMPInclJetXsec_PY8unfdata_wdatameas(outdir,fout);
-    makeSMPInclJetXsec_PY8unfdata_wdatameas_ratios(outdir,fout);
+//    makeSMPInclJetXsec_PY8unfdata_wdatameas(outdir,fout);
+//    makeSMPInclJetXsec_PY8unfdata_wdatameas_ratios(outdir,fout);
     //response matrices for this unfolding
-    makeSMPInclJetXsec_PY8unfrespmat_onePadOneEta(outdir,fout);
+//    makeSMPInclJetXsec_PY8unfrespmat_onePadOneEta(outdir,fout);
   }
   
   

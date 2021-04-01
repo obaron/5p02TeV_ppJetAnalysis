@@ -386,8 +386,10 @@ if(doJERsys){
     mcspectra[i]->Delete();
     
     spectra[i]->Delete();
+if(doJERsys){
     spectra_JERup[i]  ->Delete();
     spectra_JERdown[i]->Delete();
+}
     spectra_JECup[i]  ->Delete();
     spectra_JECdown[i]->Delete();
     
@@ -420,7 +422,7 @@ if(doJERsys){
 //--------------------------------------------------------------------------------------------------------------------------------
 void  makeSMPInclJetXsec_PY8unfdatasysterr_ratios (std::string outdir, TFile* fout){
   std::cout<<"running makeSMPInclJetXsec_PY8unfdatasysterr_ratios"<<std::endl;
-const bool doJERsys=false;
+
   const int netabins=PY8_UNFDIR_DATA_Nfiles;  
   if(netabins!=n_etabin_strs){
     printetabinerrormessage();
