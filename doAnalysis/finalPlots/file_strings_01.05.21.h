@@ -127,10 +127,10 @@ const int   NLO_UNFDIR_DATA_SYST_Nfiles=(sizeof(   NLO_UNFDIR_DATA_SYST_file_arr
 // ------------------------------------------------------------------------------- //
 const std::string JERDIR_MC  ="JER/";
 const std::string JERDIR_MC_file_array[]={ 
-  "ak3PF_PY8JER_00eta05_003.22.21_sigmu",
-  "ak3PF_PY8JER_05eta10_003.22.21_sigmu",
-  "ak3PF_PY8JER_10eta15_003.22.21_sigmu",
-  "ak3PF_PY8JER_15eta20_003.22.21_sigmu"
+  "ak3PF_PY8JER_00eta05_03.22.21_sigmu",
+  "ak3PF_PY8JER_05eta10_03.22.21_sigmu",
+  "ak3PF_PY8JER_10eta15_03.22.21_sigmu",
+  "ak3PF_PY8JER_15eta20_03.22.21_sigmu"
 };
 const std::string JERDIR_MC_shortdir_array[]={ 
   "YBIN0",

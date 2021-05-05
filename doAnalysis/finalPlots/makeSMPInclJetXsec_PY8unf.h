@@ -832,16 +832,16 @@ void  makeSMPInclJetXsec_PY8unfdata_wdatameas_ratios (std::string outdir, TFile*
   TH1D* measspectra[netabins]={};
 
   TH1D* spectra[netabins]={};
-if(doJERsys){ 
+ 
  TH1D* spectra_JERup[netabins]={};
   TH1D* spectra_JERdown[netabins]={};  
-}
+
   TH1D* ratios[netabins]={};
   TH1D* ratios_statunc[netabins]={};
-  if(doJERsys){
+
   TH1D* ratios_JERup[netabins]={};
   TH1D* ratios_JERdown[netabins]={};
-}
+
   
   //first get the plots, clone + divide accordingly. binning should be set for me already, essentially
   for(int i=0; i<netabins; i++){
