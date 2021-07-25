@@ -994,7 +994,7 @@ int SVDUnfoldNLOMCSpectra( std::string inFile_MC_dir , std::string inFile_MC_nam
     //leg1->SetTextSize(0.02);
     leg1->Draw();
     
-    //drawText( "5.02 TeV pp, ak4PF Jets",          0.14, 0.75, 22);
+    //drawText( "5.02 TeV pp, ak3PF Jets",          0.14, 0.75, 22);
     //drawText( "Prompt-Reco, Jet80+LowerJets",     0.14, 0.72, 22);
     //drawText( MCdesc.c_str(),0.358173, 0.7859761, 19);
     drawText( ("kReg="+std::to_string(kReg[kRegDraw])).c_str(), 0.14, 0.69, 22);
@@ -1029,7 +1029,7 @@ int SVDUnfoldNLOMCSpectra( std::string inFile_MC_dir , std::string inFile_MC_nam
     //leg3->SetTextSize(0.02);
     leg3->Draw();
     
-    //drawText( "5.02 TeV pp, ak4PF Jets",          0.14, 0.75, 22);
+    //drawText( "5.02 TeV pp, ak3PF Jets",          0.14, 0.75, 22);
     //drawText( "Prompt-Reco, Jet80+LowerJets",     0.14, 0.72, 22);
     //drawText( MCdesc.c_str(),0.358173, 0.7859761, 19);
     drawText( ("kReg="+std::to_string(kReg[kRegDraw])).c_str(), 0.14, 0.69, 22);
@@ -1072,7 +1072,7 @@ int SVDUnfoldNLOMCSpectra( std::string inFile_MC_dir , std::string inFile_MC_nam
     //leg2->SetTextSize(0.02);
     leg2->Draw();
     
-    //drawText( "5.02 TeV pp, ak4PF Jets",          0.14, 0.75, 22);
+    //drawText( "5.02 TeV pp, ak3PF Jets",          0.14, 0.75, 22);
     //drawText( "Prompt-Reco, Jet80+LowerJets",     0.14, 0.72, 22);
     //drawText( MCdesc.c_str(),0.358173, 0.7859761, 19);
     drawText( ("kReg="+std::to_string(kReg[kRegDraw])).c_str(), 0.14, 0.69, 22);
@@ -1107,7 +1107,7 @@ int SVDUnfoldNLOMCSpectra( std::string inFile_MC_dir , std::string inFile_MC_nam
     legfold->AddEntry(hrec_truthfold_ratio[kRegDraw],"SS MC Fold(Truth)/SS MC Meas.","pl");
     legfold->Draw();
     
-    //drawText( "5.02 TeV pp, ak4PF Jets",          0.14, 0.75, 22);
+    //drawText( "5.02 TeV pp, ak3PF Jets",          0.14, 0.75, 22);
     //drawText( "Prompt-Reco, Jet80+LowerJets",     0.14, 0.72, 22);
     //drawText( MCdesc.c_str(),0.358173, 0.7859761, 19);
     drawText( ("kReg="+std::to_string(kReg[kRegDraw])).c_str(), 0.14, 0.69, 22);
@@ -1144,7 +1144,7 @@ int SVDUnfoldNLOMCSpectra( std::string inFile_MC_dir , std::string inFile_MC_nam
     //legfake->SetTextSize(0.02);
     legfake->Draw();
     
-//    drawText( "5.02 TeV pp, ak4PF Jets",          0.14, 0.75, 22);
+//    drawText( "5.02 TeV pp, ak3PF Jets",          0.14, 0.75, 22);
 //    drawText( "Prompt-Reco, Jet80+LowerJets",     0.14, 0.72, 22);
 //    drawText( MCdesc.c_str(),0.358173, 0.7859761, 19);
     drawText( ("kReg="+std::to_string(kReg[kRegDraw])).c_str(), 0.14, 0.69, 22);

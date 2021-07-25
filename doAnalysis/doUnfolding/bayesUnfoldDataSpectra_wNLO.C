@@ -841,7 +841,7 @@ int bayesUnfoldDataSpectra_wNLO( std::string inFile_Data_dir , std::string inFil
     theLineAt1p1->SetY1(1.1);    theLineAt1p1->SetY2(1.1);
 
     std::vector<std::string> desclines={ "#sqrt{s} = 5.02 TeV",
-					 "ak4PF Jets",
+					 "ak3PF Jets",
 					 "#||{y} < 2.0"};
     
     // gen/meas/unf spectra hists ---------------    

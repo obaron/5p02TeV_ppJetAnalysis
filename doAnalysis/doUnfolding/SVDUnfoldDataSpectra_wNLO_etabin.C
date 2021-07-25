@@ -926,7 +926,7 @@ int SVDUnfoldDataSpectra_wNLO_etabin( const int etabinint=0, const int kRegInput
     else if(etabinint==2)etabindesc_str="1.0 < "+etabindesc_str+" < 1.5";
     else if(etabinint==3)etabindesc_str="1.5 < "+etabindesc_str+" < 2.0";
     std::vector<std::string> desclines={ "#sqrt{s} = 5.02 TeV",
-					 "ak4PF Jets",
+					 "ak3PF Jets",
 					 etabindesc_str};
     
     // divectors -----------

@@ -956,7 +956,7 @@ std::cout<<"line 210"<<std::endl;
     else if(etabinint==5)etabindesc_str="2.5 < "+etabindesc_str+" < 3.0";
 
     std::vector<std::string> desclines={ "#sqrt{s} = 5.02 TeV",
-					 "ak4PF Jets",
+					 "ak3PF Jets",
 					 etabindesc_str};
     
     // gen/meas/unf spectra hists ---------------    

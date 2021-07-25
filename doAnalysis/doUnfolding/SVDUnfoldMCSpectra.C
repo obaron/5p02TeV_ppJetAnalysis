@@ -891,7 +891,7 @@ int SVDUnfoldMCSpectra(  std::string inFile_MC_dir , std::string baseName ,
     theLineAt1p1->SetY1(1.1);    theLineAt1p1->SetY2(1.1);
 
     std::vector<std::string> desclines={ "#sqrt{s} = 5.02 TeV",
-					 "ak4PF Jets",
+					 "ak3PF Jets",
 					 "#||{y} < 2.0"};
 
     // divectors -----------

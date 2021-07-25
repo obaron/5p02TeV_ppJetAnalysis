@@ -38,7 +38,7 @@ const std::string yaxtitle="#frac{d^{2}#sigma}{d"+etaORy_str+" dp_{T}} [#frac{pb
 const std::string xaxtitle="Jet p_{T} [GeV]";
 
 const std::string sqrts="#sqrt{s} = 5.02 TeV";
-const std::string jettype="anti-k_{T} PF Jets (R = 0.4)";
+const std::string jettype="anti-k_{T} PF Jets (R = 0.3)";
 const std::string ptcuts="56 GeV < Jet p_{T} < 967 GeV";
 const std::string ptcuts_lo="56 GeV < Jet p_{T} < ";
 const std::string intlumi="L_{int} = 27.4 pb^{-1}";

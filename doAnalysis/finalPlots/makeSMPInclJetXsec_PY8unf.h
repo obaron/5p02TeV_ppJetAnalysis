@@ -920,7 +920,7 @@ if(doJERsys){
   }
   
   
-if(doJERsys){
+
   TCanvas* canv=makeSMPRatioCanvas("PY8unfdata_SMPInclJetXsec_wdatameas_ratio");
   
   TPaveText* SMPtitle=makePrelimPaveTextTitleRatio();
@@ -928,9 +928,11 @@ if(doJERsys){
     
     canv->cd(i+1);
     ratios[i]->Draw("HIST E ][");    
+if(doJERsys){	
     ratios_JERup[i]->Draw("HIST ][ SAME");    
     ratios_JERdown[i]->Draw("HIST ][ SAME");    
-    ratios_statunc[i]->Draw("HIST E ][ SAME");    
+}    
+	ratios_statunc[i]->Draw("HIST E ][ SAME");    
     
     float xlo=ratios[i]->GetBinLowEdge(1);
     float xhi=
@@ -972,17 +974,19 @@ if(doJERsys){
   for(int i=0; i<netabins;i++){
     
     spectra[i]->Delete();
+if(doJERsys){
     spectra_JERup[i]  ->Delete();
     spectra_JERdown[i]->Delete();
-    
+}    
     ratios[i]->Delete();
     ratios_statunc[i]->Delete();
+if(doJERsys){
     ratios_JERup[i]  ->Delete();
     ratios_JERdown[i]->Delete();
-
+}
   }  
 
-}
+
   
   return;
 }
