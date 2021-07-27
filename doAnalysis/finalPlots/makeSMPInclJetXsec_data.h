@@ -27,19 +27,19 @@ void printEvtCountTable(std::string outdir){
   TH1D* h_NEvents_Jet80_read   =(TH1D*)fin->Get("NEvents_Jet80_read"   );
   TH1D* h_NEvents_Jet80_skimCut=(TH1D*)fin->Get("NEvents_Jet80_skimCut");
   TH1D* h_NEvents_Jet80_vzCut  =(TH1D*)fin->Get("NEvents_Jet80_vzCut"  );
-  TH1D* h_NEvents_Jet80_PFMETfracCut=(TH1D*)fin->Get("NEvents_Jet80_PFMETfracCut"  );
+  //TH1D* h_NEvents_Jet80_PFMETfracCut=(TH1D*)fin->Get("NEvents_Jet80_PFMETfracCut"  );
   TH1D* h_NEvents_Jet80_is80   =(TH1D*)fin->Get("NEvents_Jet80_is80"   );
 
   double Nevts_jet80_read   = h_NEvents_Jet80_read   ->GetBinContent(1);
   double Nevts_jet80_skimcut= h_NEvents_Jet80_skimCut->GetBinContent(1);
   double Nevts_jet80_vzcut  = h_NEvents_Jet80_vzCut  ->GetBinContent(1);
-  double Nevts_jet80_PFMETfracCut  = h_NEvents_Jet80_PFMETfracCut  ->GetBinContent(1);
+  //double Nevts_jet80_PFMETfracCut  = h_NEvents_Jet80_PFMETfracCut  ->GetBinContent(1);
   double Nevts_jet80_is80   = h_NEvents_Jet80_is80   ->GetBinContent(1);
 
   double perc_Nevts_jet80_read   =100.*(Nevts_jet80_read/Nevts_jet80_read); 
   double perc_Nevts_jet80_skimcut=100.*(Nevts_jet80_skimcut/Nevts_jet80_read); 
   double perc_Nevts_jet80_vzcut  =100.*(Nevts_jet80_vzcut/Nevts_jet80_read); 
-  double perc_Nevts_jet80_PFMETfracCut  =100.*(Nevts_jet80_PFMETfracCut/Nevts_jet80_read); 
+  //double perc_Nevts_jet80_PFMETfracCut  =100.*(Nevts_jet80_PFMETfracCut/Nevts_jet80_read); 
   double perc_Nevts_jet80_is80   =100.*(Nevts_jet80_is80/Nevts_jet80_read); 
   
   std::cout<<std::endl;
@@ -47,20 +47,20 @@ void printEvtCountTable(std::string outdir){
   std::cout<<"# Events ............................................ in Dataset: "<<  Nevts_jet80_read   <<", Fraction of total: "<< perc_Nevts_jet80_read   <<std::endl;
   std::cout<<"# Events after HBHENoise, BeamScraping, and PV  quality  filters: "<<  Nevts_jet80_skimcut<<", Fraction of total: "<< perc_Nevts_jet80_skimcut<<std::endl;
   std::cout<<"# Events after ................................. |vz|< 24 cm cut: "<<  Nevts_jet80_vzcut  <<", Fraction of total: "<< perc_Nevts_jet80_vzcut  <<std::endl;
-  std::cout<<"# Events after ............................. PFMETFrac < 0.3 cut: "<<  Nevts_jet80_PFMETfracCut  <<", Fraction of total: "<< perc_Nevts_jet80_PFMETfracCut  <<std::endl;
+  //std::cout<<"# Events after ............................. PFMETFrac < 0.3 cut: "<<  Nevts_jet80_PFMETfracCut  <<", Fraction of total: "<< perc_Nevts_jet80_PFMETfracCut  <<std::endl;
   std::cout<<"# Events after ............... passing trigger jet req for HLT80: "<<  Nevts_jet80_is80   <<", Fraction of total: "<< perc_Nevts_jet80_is80   <<std::endl;
   
   TH1D* h_NEvents_LowJets_read   =(TH1D*)fin->Get("NEvents_LowJets_read"   );
   TH1D* h_NEvents_LowJets_skimCut=(TH1D*)fin->Get("NEvents_LowJets_skimCut");
   TH1D* h_NEvents_LowJets_vzCut  =(TH1D*)fin->Get("NEvents_LowJets_vzCut"  );
-  TH1D* h_NEvents_LowJets_PFMETfracCut=(TH1D*)fin->Get("NEvents_LowJets_PFMETfracCut"  );
+  //TH1D* h_NEvents_LowJets_PFMETfracCut=(TH1D*)fin->Get("NEvents_LowJets_PFMETfracCut"  );
   TH1D* h_NEvents_LowJets_is40   =(TH1D*)fin->Get("NEvents_LowJets_is40"   );
   TH1D* h_NEvents_LowJets_is60   =(TH1D*)fin->Get("NEvents_LowJets_is60"   );
 
   double Nevts_lowjets_read   = h_NEvents_LowJets_read   ->GetBinContent(1);
   double Nevts_lowjets_skimcut= h_NEvents_LowJets_skimCut->GetBinContent(1);
   double Nevts_lowjets_vzcut  = h_NEvents_LowJets_vzCut  ->GetBinContent(1);
-  double Nevts_lowjets_PFMETfracCut  = h_NEvents_LowJets_PFMETfracCut  ->GetBinContent(1);
+  //double Nevts_lowjets_PFMETfracCut  = h_NEvents_LowJets_PFMETfracCut  ->GetBinContent(1);
   double Nevts_lowjets_is60   = h_NEvents_LowJets_is60   ->GetBinContent(1);
   double Nevts_lowjets_is40   = h_NEvents_LowJets_is40   ->GetBinContent(1);
   double Nevts_lowjets_is60or40   = Nevts_lowjets_is60+Nevts_lowjets_is40;
@@ -68,7 +68,7 @@ void printEvtCountTable(std::string outdir){
   double perc_Nevts_lowjets_read   =100.*(Nevts_lowjets_read/Nevts_lowjets_read); 
   double perc_Nevts_lowjets_skimcut=100.*(Nevts_lowjets_skimcut/Nevts_lowjets_read); 
   double perc_Nevts_lowjets_vzcut  =100.*(Nevts_lowjets_vzcut/Nevts_lowjets_read);
-  double perc_Nevts_lowjets_PFMETfracCut  =100.*(Nevts_lowjets_PFMETfracCut/Nevts_lowjets_read); 
+  //double perc_Nevts_lowjets_PFMETfracCut  =100.*(Nevts_lowjets_PFMETfracCut/Nevts_lowjets_read); 
   double perc_Nevts_lowjets_is60   =100.*(Nevts_lowjets_is60/Nevts_lowjets_read); 
   double perc_Nevts_lowjets_is40   =100.*(Nevts_lowjets_is40/Nevts_lowjets_read); 
   double perc_Nevts_lowjets_is60or40   =100.*(Nevts_lowjets_is60or40/Nevts_lowjets_read);  
@@ -78,7 +78,7 @@ void printEvtCountTable(std::string outdir){
   std::cout<<"# Events ............................................ in Dataset: "<< Nevts_lowjets_read     <<", Fraction of total: "<< perc_Nevts_lowjets_read     <<std::endl;
   std::cout<<"# Events after HBHENoise, BeamScraping, and PV  quality  filters: "<< Nevts_lowjets_skimcut  <<", Fraction of total: "<< perc_Nevts_lowjets_skimcut  <<std::endl;
   std::cout<<"# Events after ..................................|vz|< 24 cm cut: "<< Nevts_lowjets_vzcut    <<", Fraction of total: "<< perc_Nevts_lowjets_vzcut    <<std::endl;
-  std::cout<<"# Events after ............................. PFMETFrac < 0.3 cut: "<<  Nevts_lowjets_PFMETfracCut  <<", Fraction of total: "<< perc_Nevts_lowjets_PFMETfracCut  <<std::endl;
+  //std::cout<<"# Events after ............................. PFMETFrac < 0.3 cut: "<<  Nevts_lowjets_PFMETfracCut  <<", Fraction of total: "<< perc_Nevts_lowjets_PFMETfracCut  <<std::endl;
   std::cout<<"# Events after ...... passing trigger jet req for HLT60 or HLT40: "<< Nevts_lowjets_is60or40 <<", Fraction of total: "<< perc_Nevts_lowjets_is60or40 <<std::endl;
   std::cout<<"# Events ......................... passing trigger jet req for HLT40 only: "<<Nevts_lowjets_is40 <<", Fraction of total: "<< perc_Nevts_lowjets_is40 <<std::endl;
   std::cout<<"# Events ......................... passing trigger jet req for HLT60 only: "<<Nevts_lowjets_is60 <<", Fraction of total: "<< perc_Nevts_lowjets_is60 <<std::endl;
@@ -109,13 +109,13 @@ void printEvtCountTable(std::string outdir){
   h_NEvents_Jet80_read    ->Delete();
   h_NEvents_Jet80_skimCut ->Delete();
   h_NEvents_Jet80_vzCut	  ->Delete();
-  h_NEvents_Jet80_PFMETfracCut	  ->Delete();
+  //h_NEvents_Jet80_PFMETfracCut	  ->Delete();
   h_NEvents_Jet80_is80    ->Delete();
 
   h_NEvents_LowJets_read   ->Delete();
   h_NEvents_LowJets_skimCut->Delete();
   h_NEvents_LowJets_vzCut  ->Delete();
-  h_NEvents_LowJets_PFMETfracCut	  ->Delete();
+  //h_NEvents_LowJets_PFMETfracCut	  ->Delete();
   h_NEvents_LowJets_is40   ->Delete();
   h_NEvents_LowJets_is60   ->Delete();
 

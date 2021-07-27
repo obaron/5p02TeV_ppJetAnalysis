@@ -86,7 +86,7 @@ void makeFinalPlots(){
   //////makeSMPInclJetXsec_data.h //good, only issue is that the PY8 file doesn't have the PFMETFracCut event count
   if(doDataPlots){
     //Data/PY8 event counts
-    //printEvtCountTable(outdir);
+    printEvtCountTable(outdir);
     
     //Data Stat Errors
     makeSMPInclJetXsec_fracstaterrData_ratios(outdir,fout);
