@@ -2,9 +2,9 @@
 
 
 dojetQAPlots=0
-dojetTrigQAPlots=0
+dojetTrigQAPlots=1
 dojetIDQAPlots=0
-dojetIDQAPlots_v2=1
+dojetIDQAPlots_v2=0
 dojetMultPlots=0
 scpOutput=0
 

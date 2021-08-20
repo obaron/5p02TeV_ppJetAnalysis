@@ -24,11 +24,32 @@ void printEvtCountTable(std::string outdir){
   
   TFile* fin=TFile::Open((EVTCOUNTS+EVTCOUNTS_file+".root").c_str(),"READ");
   
+  std::cout<<"Opening Data File"<<std::endl;
+  TFile* fdata=TFile::Open("/cms/heavyion/obaron/5p02TeV_ppJetAnalysis/outputCondor/06.25.19_outputCondor/ppData_HighPtJetTrig_ak3PFJets_06-25-19_jetPlots_0.0eta2.0_SMPbins/HighPtJetTrig_noMB_ak3PF-allFiles.root","READ");
+  TFile* fMC=TFile::Open("/cms/heavyion/obaron/5p02TeV_ppJetAnalysis/outputCondor/09.30.20_outputCondor/ppMC_Py8_CUETP8M1_QCDjetAllPtBins_ak3PFJets_09-30-20_jetPlots_0.0eta2.0/Py8_CUETP8M1_QCDjetAllPtBins_ak3PF-allFiles.root","READ");
+  
   TH1D* h_NEvents_Jet80_read   =(TH1D*)fin->Get("NEvents_Jet80_read"   );
   TH1D* h_NEvents_Jet80_skimCut=(TH1D*)fin->Get("NEvents_Jet80_skimCut");
   TH1D* h_NEvents_Jet80_vzCut  =(TH1D*)fin->Get("NEvents_Jet80_vzCut"  );
   //TH1D* h_NEvents_Jet80_PFMETfracCut=(TH1D*)fin->Get("NEvents_Jet80_PFMETfracCut"  );
   TH1D* h_NEvents_Jet80_is80   =(TH1D*)fin->Get("NEvents_Jet80_is80"   );
+  
+  TH1D* h_NEvents_read   =(TH1D*)fdata->Get("NEvents_read"   );
+  TH1D* h_NEvents_vzCut=(TH1D*)fdata->Get("NEvents_vzCut");
+  TH1D* h_NEvents_skimCut  =(TH1D*)fdata->Get("NEvents_skimCut"  );
+
+  TH1D* h_NEvents_MCread   =(TH1D*)fMC->Get("NEvents_read"   );
+  TH1D* h_NEvents_MCvzCut=(TH1D*)fMC->Get("NEvents_vzCut");
+  TH1D* h_NEvents_MCskimCut  =(TH1D*)fMC->Get("NEvents_skimCut"  );
+  
+  double NEvents_read		= h_NEvents_read		->GetBinContent(1);
+  double NEvents_vzCut		= h_NEvents_vzCut		->GetBinContent(1);
+  double NEvents_skimCut	= h_NEvents_skimCut		->GetBinContent(1);
+
+  double NEvents_MCread		= h_NEvents_MCread		->GetBinContent(1);
+  double NEvents_MCvzCut	= h_NEvents_MCvzCut		->GetBinContent(1);
+  double NEvents_MCskimCut	= h_NEvents_MCskimCut		->GetBinContent(1);
+
 
   double Nevts_jet80_read   = h_NEvents_Jet80_read   ->GetBinContent(1);
   double Nevts_jet80_skimcut= h_NEvents_Jet80_skimCut->GetBinContent(1);
@@ -41,6 +62,30 @@ void printEvtCountTable(std::string outdir){
   double perc_Nevts_jet80_vzcut  =100.*(Nevts_jet80_vzcut/Nevts_jet80_read); 
   //double perc_Nevts_jet80_PFMETfracCut  =100.*(Nevts_jet80_PFMETfracCut/Nevts_jet80_read); 
   double perc_Nevts_jet80_is80   =100.*(Nevts_jet80_is80/Nevts_jet80_read); 
+  
+  double perc_NEvents_read		= 100*(NEvents_read/NEvents_read);
+  double perc_NEvents_vzCut		= 100*(NEvents_vzCut/NEvents_read);
+  double perc_NEvents_skimCut	= 100*(NEvents_skimCut/NEvents_read);
+
+  double perc_NEvents_MCread		= 100*(NEvents_MCread/NEvents_MCread);
+  double perc_NEvents_MCvzCut		= 100*(NEvents_MCvzCut/NEvents_MCread);
+  double perc_NEvents_MCskimCut		= 100*(NEvents_MCskimCut/NEvents_MCread);
+
+  
+  std::cout<<std::endl;
+  std::cout<<" ----- FinalPlots Data Event Count Report ----- "<<std::endl;
+  std::cout<<"# Events ............................................ in Dataset: "<<  NEvents_read   <<", Fraction of total: "		<< perc_NEvents_read   <<std::endl;
+  std::cout<<"# Events after HBHENoise, BeamScraping, and PV  quality  filters: "<<  NEvents_skimCut<<", Fraction of total: "		<< perc_NEvents_skimCut <<std::endl;
+  std::cout<<"# Events after ................................. |vz|< 24 cm cut: "<<  NEvents_vzCut  <<", Fraction of total: "		<< perc_NEvents_vzCut <<std::endl;  
+  
+  std::cout<<std::endl;
+  std::cout<<" ----- FinalPlots MC Event Count Report ----- "<<std::endl;
+  std::cout<<"# Events ............................................ in Dataset: "<<  NEvents_MCread   <<", Fraction of total: "		<< perc_NEvents_MCread   <<std::endl;
+  std::cout<<"# Events after HBHENoise, BeamScraping, and PV  quality  filters: "<<  NEvents_MCskimCut<<", Fraction of total: "		<< perc_NEvents_MCskimCut <<std::endl;
+  std::cout<<"# Events after ................................. |vz|< 24 cm cut: "<<  NEvents_MCvzCut  <<", Fraction of total: "		<< perc_NEvents_MCvzCut <<std::endl;  
+    
+  
+  
   
   std::cout<<std::endl;
   std::cout<<" ----- Jet80 PD Event Count Report ----- "<<std::endl;
@@ -123,6 +168,8 @@ void printEvtCountTable(std::string outdir){
   h_NEvents_MC_skimCut	 ->Delete();
   h_NEvents_MC_vzCut     ->Delete();
   //h_NEvents_MC_PFMETfracCut     ->Delete();
+  
+  
 
   //// ============================================================================================ //
   //// ======================================= Jet Counts ========================================= //

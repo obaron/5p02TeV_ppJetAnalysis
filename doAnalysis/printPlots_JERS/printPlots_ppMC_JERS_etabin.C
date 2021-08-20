@@ -620,7 +620,7 @@ int printPlots_ppMC_JERS_etabin(std::string inFile_MC_dir,const std::string outp
     jetdesc->SetTextSize(size);
     jetdesc->SetNDC();
     jetdesc->Draw();
-    TLatex* absetarange=new TLatex(posx, posy-0.05, (absetabins_str[absetabin] + " < #||{y} < " + absetabins_str[absetabin+1]).c_str());
+    TLatex* absetarange=new TLatex(posx, posy-0.05, (absetabins_str[absetabin] + " < #||{#eta} < " + absetabins_str[absetabin+1]).c_str());
     absetarange->SetTextSize(size);
     absetarange->SetNDC();
     absetarange->Draw();

@@ -70,7 +70,7 @@ const std::string outputDir=HOME_BASE+"output/";
 
 // misc text ------------------------
 const std::string crossSectionAxTitle  ="#sigma (#mub)";
-const std::string ddcrossSectionAxTitle="#frac{d^{2}#sigma}{dp_{T}d#||{y}} (#mub/GeV)";
+const std::string ddcrossSectionAxTitle="#frac{d^{2}#sigma}{dp_{T}d#||{#eta}} (#mub/GeV)";
 const std::string dcrossSectionAxTitle="#frac{d#sigma^{}}{dp_{T}} (#mub/GeV)";
 const std::string AUAxTitle  ="A.U.";
 const std::string ratioTitle ="MC/Data";

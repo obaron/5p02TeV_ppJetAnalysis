@@ -429,7 +429,7 @@ void  makeSMPInclJetXsec_NLOsyst_targPDF_ratios (std::string outdir, TFile* fout
     else if(i==1)desc=makePaveText( 0.15, 0.63, 0.45, 0.88);
     else    desc=makePaveText( 0.15, 0.74, 0.45, 0.88);
     //desc->AddText(etabin_strs[i].c_str());
-    desc->AddText(const_ybin_strs[i].c_str());
+    desc->AddText(const_etabin_strs[i].c_str());
     std::string ptrange=ptcuts_lo;
     ptrange+=std::to_string( (int)xhi)+" GeV";
     desc->AddText(ptrange.c_str());
@@ -555,7 +555,7 @@ void  makeSMPInclJetXsec_NPCs_onePadAllEta (std::string outdir, TFile* fout, std
   
   for(int i=0; i<netabins; i++){
     NPCfit[i]->Draw("SAME");
-    std::string legstr=const_ybin_strs[i] ;
+    std::string legstr=const_etabin_strs[i] ;
     leg->AddEntry( NPCfit[i], 
 		   (legstr).c_str() ,"lp");        
     
@@ -762,7 +762,7 @@ void  makeSMPInclJetXsec_NPCs_onePadOneEta (std::string outdir, TFile* fout, std
     TLine* one     =makeTLine(xmin[i], 1. , xmax[i], 1.);          
     
     TPaveText* desc=makePaveText( 0.4, .9, 0.6, .98);
-    desc->AddText(const_ybin_strs[i].c_str());
+    desc->AddText(const_etabin_strs[i].c_str());
     
     canv->cd(i+1)->SetLogx(dologx);
     canv->cd(i+1)->SetLogy(dology);

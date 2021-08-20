@@ -1403,7 +1403,7 @@ void makeCombinedPlots(std::string outRootFile="", TCanvas* canvForPrint=NULL, s
     return; }
   std::vector<std::string> desclines={ "#sqrt{s} = 5.02 TeV",
 				       "ak4PF Jets",
-				       "#||{y} < 2.0"};
+				       "#||{#eta} < 2.0"};
   
   TFile* fout= new TFile(outRootFile.c_str(), "UPDATE");
   if(!fout){std::cout<<"ERROR output file pointer not found. exit."<<std::endl;
@@ -2022,7 +2022,7 @@ void makeCombinedPlots_closure(std::string outRootFile="", TCanvas* canvForPrint
     return; }
   std::vector<std::string> desclines={ "#sqrt{s} = 5.02 TeV",
 				       "ak4PF Jets",
-				       "#||{y} < 2.0"};
+				       "#||{#eta} < 2.0"};
   
   TFile* fout= new TFile(outRootFile.c_str(), "UPDATE");
   if(!fout){std::cout<<"ERROR output file pointer not found. exit."<<std::endl;

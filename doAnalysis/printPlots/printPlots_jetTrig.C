@@ -1,3 +1,4 @@
+const int N_etabins=4;
 #include "printPlots.h"
 
 
@@ -9,7 +10,7 @@ const bool comparePFandCalo=false;
 const bool usedHLT100=false;
 //const bool usedMinBias=true;
 //const bool usedHLTPF=true;//if false, HLTCalo was used
-const int N_etabins=4;
+
 
 // the macro ------------------------
 int printPlots_jetTrig ( const std::string input_ppData_condorDir ,   const std::string output_PDFname_base){

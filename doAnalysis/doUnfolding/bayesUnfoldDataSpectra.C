@@ -828,7 +828,7 @@ int bayesUnfoldDataSpectra( std::string inFile_Data_dir , std::string inFile_MC_
 
     std::vector<std::string> desclines={ "#sqrt{s} = 5.02 TeV",
 					 "ak3PF Jets",
-					 "#||{y} < 2.0"};
+					 "#||{#eta} < 2.0"};
     
     // gen/meas/unf spectra hists ---------------    
     canvForPrint->cd();

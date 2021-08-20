@@ -947,7 +947,7 @@ std::cout<<"line 210"<<std::endl;
     TLine* theLineAt1p1= (TLine*)theLineAtOne->Clone();
     theLineAt1p1->SetY1(1.1);    theLineAt1p1->SetY2(1.1);
 
-    std::string etabindesc_str="#||{y}";
+    std::string etabindesc_str="#||{#eta}";
     if(     etabinint==0)etabindesc_str="0.0 < "+etabindesc_str+" < 0.5";
     else if(etabinint==1)etabindesc_str="0.5 < "+etabindesc_str+" < 1.0";
     else if(etabinint==2)etabindesc_str="1.0 < "+etabindesc_str+" < 1.5";

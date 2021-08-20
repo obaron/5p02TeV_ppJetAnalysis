@@ -1,5 +1,6 @@
-const std::string etaORy_str="y";
+//const std::string etaORy_str="y";
 //const bool etaORy_str="#eta";
+const std::string etaORy_str="#eta";
 
 //// ETA OR YBIN STRINGS FOR FINAL PLOTTING MACRO --> STILL CALLED 'etabin_strs' CAUSE IM LAZY
 const std::string etabin_strs[]={

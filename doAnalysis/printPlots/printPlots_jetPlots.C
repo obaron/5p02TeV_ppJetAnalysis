@@ -1,4 +1,4 @@
-#include "printPlots.h"
+
 
 
 // code/job switches ------------------------
@@ -18,6 +18,8 @@ const bool doJetIDPlots=true;
 const bool useMB=false;
 const int Netabins=4;
 const bool print_incjetana_tupelequiv=false;
+
+#include "printPlots.h"
 
 // the macro ------------------------
 int printPlots_jetPlots(const std::string input_ppData_condorDir , const std::string input_ppMC_condorDir , 
